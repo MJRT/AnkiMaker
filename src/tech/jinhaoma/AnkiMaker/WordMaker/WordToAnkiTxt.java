@@ -9,7 +9,7 @@ public class WordToAnkiTxt {
 
 	public static void main(String[] args) throws IOException {
 
-		getAnki("D:\\soft\\英语单词制卡工具6.0\\anki.txt","E:\\Private\\EveryDayWord\\");
+		getAnki("D:\\soft\\英语单词制卡工具6.0\\anki.txt","E:\\Myfile\\EveryDayWord\\");
 	}
 	
 	static void getAnki(String inFile,String outFiolder){
@@ -46,7 +46,9 @@ public class WordToAnkiTxt {
 
 
 		try {
-
+//			String Time = new Date().toString() + ".txt";
+//			String Name = new String(Time.getBytes("unicode"));
+//			System.out.println(""+Name.toCharArray());
 			File out  = new File("E:\\Private\\EveryDayWord\\","end.txt");
 	    	if(!out.exists())
 	    		out.createNewFile();
@@ -60,7 +62,7 @@ public class WordToAnkiTxt {
 				osw.write(rrr.getVocab());			osw.write("\t");
 				osw.write(rrr.getSentence());
 				osw.write("\r\n");
-				System.out.println(rrr.toString());
+				//System.out.println(rrr.toString());
 			}
 
 			osw.flush();

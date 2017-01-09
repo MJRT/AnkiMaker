@@ -13,7 +13,7 @@ import java.text.*;
 public class DictToWord {
 
 	public static void main(String[] args) throws IOException {
-		getWord("e:\\123.txt","E:\\Private\\EveryDayWord\\output.txt");
+		getWord("e:\\123.txt","E:\\Myfile\\EveryDayWord\\output.txt");
 	}
 	
 	
@@ -47,7 +47,6 @@ public class DictToWord {
 	        for(String rrr : res)
 	        {
 	        	osw.write(rrr);
-	        	System.out.println(rrr);
 				osw.write("\r\n");
 	        }
 	        osw.flush(); 
