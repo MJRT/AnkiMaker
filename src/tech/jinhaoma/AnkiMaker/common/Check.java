@@ -1,5 +1,7 @@
 package tech.jinhaoma.AnkiMaker.common;
 
+import static java.lang.Character.isLetter;
+
 public class Check {
 	private static final boolean isChinese(char c) {  
 	    Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);  
@@ -18,10 +20,24 @@ public class Check {
 	    char[] ch = strName.toCharArray();
 		for (char c : ch) {
 			if (isChinese(c)) {
-	            return true;  
+	            return false;
 	        }  
 	    }
-	    return false;  
-	}  
+	    return true;
+	}
+
+
+
+	public static final boolean isEnglishWord(String strName) {
+		char[] ch = strName.toCharArray();
+		for (int i = 0 ; i < ch.length ; i++) {
+			if (!(isLetter(ch[i]) || (	   ch[i] == '-'
+										&& ch[i-1>=0?i-1:i+1] != '-'
+										&& ch[i+1<ch.length?i+1:i-1] != '-')) ) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
 

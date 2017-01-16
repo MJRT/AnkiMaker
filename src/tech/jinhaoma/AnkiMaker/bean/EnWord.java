@@ -10,103 +10,137 @@ public class EnWord implements Serializable{
     private static final long serialVersionUID = 1L;
 
     private String English;
-    private String IPA;
+    private String Aps;
     private String ChineseOfOnline;
     private String SentenceOfEnglish;
     private String SentenceOfChinese;
-    private String Sentence;
+    private String ApsOfOxford;
     private String ChineseOfOxford;
-    private String Vocab;
+    private String VocabSimple;
+    private String VocabExtend;
+    private String Star;
+    private String MeanOfCollins;
+
+    private String Sentence;
+    private String MeanOfChinses;
+    private String MeanOfEnglish;
 
     public EnWord() {
     }
 
-    @Override
-    public String toString() {
-        return "EnWord{" +
-                "English='" + English + '\'' +
-                ", IPA='" + IPA + '\'' +
-                ", ChineseOfOnline='" + ChineseOfOnline + '\'' +
-                ", SentenceOfEnglish='" + SentenceOfEnglish + '\'' +
-                ", SentenceOfChinese='" + SentenceOfChinese + '\'' +
-                ", Sentence='" + Sentence + '\'' +
-                ", ChineseOfOxford='" + ChineseOfOxford + '\'' +
-                ", Vocab='" + Vocab + '\'' +
-                '}';
-    }
-
-    public EnWord(String english, String IPA, String chineseOfOnline, String sentenceOfEnglish, String sentenceOfChinese, String Sentence, String chineseOfOxford, String vocab) {
-        English = english;
-        this.IPA = IPA;
-        ChineseOfOnline = chineseOfOnline;
-        SentenceOfEnglish = sentenceOfEnglish;
-        SentenceOfChinese = sentenceOfChinese;
-        this.Sentence = Sentence;
-        ChineseOfOxford = chineseOfOxford;
-        Vocab = vocab;
-    }
-
-    public void setEnglish(String english) {
-        English = english;
-    }
-
-    public void setIPA(String IPA) {
-        this.IPA = IPA;
-    }
-
-    public void setChineseOfOnline(String chineseOfOnline) {
-        ChineseOfOnline = chineseOfOnline;
-    }
-
-    public void setSentenceOfEnglish(String sentenceOfEnglish) {
-        SentenceOfEnglish = sentenceOfEnglish;
-    }
-
-    public void setSentenceOfChinese(String sentenceOfChinese) {
-        SentenceOfChinese = sentenceOfChinese;
-    }
-
-    public void setSentence(String Sentence) {
-        this.Sentence = Sentence;
-    }
-
-    public void setChineseOfOxford(String chineseOfOxford) {
-        ChineseOfOxford = chineseOfOxford;
-    }
-
-    public void setVocab(String vocab) {
-        Vocab = vocab;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public String getEnglish() {
         return English;
     }
 
-    public String getIPA() {
-        return IPA;
+    public void setEnglish(String english) {
+        English = english;
+    }
+
+    public String getAps() {
+        return Aps;
+    }
+
+    public void setAps(String aps) {
+        Aps = aps;
     }
 
     public String getChineseOfOnline() {
         return ChineseOfOnline;
     }
 
+    public void setChineseOfOnline(String chineseOfOnline) {
+        ChineseOfOnline = chineseOfOnline;
+    }
+
     public String getSentenceOfEnglish() {
         return SentenceOfEnglish;
+    }
+
+    public void setSentenceOfEnglish(String sentenceOfEnglish) {
+        SentenceOfEnglish = sentenceOfEnglish;
     }
 
     public String getSentenceOfChinese() {
         return SentenceOfChinese;
     }
 
-    public String getSentence() {
-        return Sentence;
+    public void setSentenceOfChinese(String sentenceOfChinese) {
+        SentenceOfChinese = sentenceOfChinese;
+    }
+
+    public String getApsOfOxford() {
+        return ApsOfOxford;
+    }
+
+    public void setApsOfOxford(String apsOfOxford) {
+        ApsOfOxford = apsOfOxford;
     }
 
     public String getChineseOfOxford() {
         return ChineseOfOxford;
     }
 
-    public String getVocab() {
-        return Vocab;
+    public void setChineseOfOxford(String chineseOfOxford) {
+        ChineseOfOxford = chineseOfOxford;
+    }
+
+    public String getVocabSimple() {
+        return VocabSimple;
+    }
+
+    public void setVocabSimple(String vocabSimple) {
+        VocabSimple = vocabSimple;
+    }
+
+    public String getVocabExtend() {
+        return VocabExtend;
+    }
+
+    public void setVocabExtend(String vocabExtend) {
+        VocabExtend = vocabExtend;
+    }
+
+    public String getStar() {
+        return Star;
+    }
+
+    public void setStar(String star) {
+        Star = star;
+    }
+
+    public String getMeanOfCollins() {
+        return MeanOfCollins;
+    }
+
+    public void setMeanOfCollins(String meanOfCollins) {
+        MeanOfCollins = meanOfCollins;
+    }
+
+    public String getSentence() {
+        return Sentence;
+    }
+
+    public void setSentence(String sentence) {
+        Sentence = sentence;
+    }
+
+    public String getMeanOfChinses() {
+        return MeanOfChinses;
+    }
+
+    public void setMeanOfChinses(String meanOfChinses) {
+        MeanOfChinses = meanOfChinses;
+    }
+
+    public String getMeanOfEnglish() {
+        return MeanOfEnglish;
+    }
+
+    public void setMeanOfEnglish(String meanOfEnglish) {
+        MeanOfEnglish = meanOfEnglish;
     }
 }

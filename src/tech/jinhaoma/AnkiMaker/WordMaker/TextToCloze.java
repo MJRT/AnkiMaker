@@ -9,7 +9,8 @@ public class TextToCloze {
 
     public static void main(String[] args) throws IOException {
 
-        getCloze("E:\\cloze_o.txt", "E:\\Myfile\\ANKI卡包\\文本\\Cloze.txt");
+        getCloze("E:\\cloze_o.txt",
+                "E:\\Myfile\\ANKI卡包\\文本\\Cloze.txt");
 
     }
 

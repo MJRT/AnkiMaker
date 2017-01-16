@@ -13,7 +13,8 @@ import java.text.*;
 public class DictToWord {
 
 	public static void main(String[] args) throws IOException {
-		getWord("e:\\123.txt","E:\\Myfile\\EveryDayWord\\output.txt");
+		getWord("e:\\123.txt",
+				"E:\\Myfile\\EveryDayWord\\output.txt");
 	}
 	
 	
@@ -49,7 +50,8 @@ public class DictToWord {
 	        	osw.write(rrr);
 				osw.write("\r\n");
 	        }
-	        osw.flush(); 
+			System.out.println(res.size());
+			osw.flush();
 	    } catch (Exception e) { 
 	        e.printStackTrace(); 
 	    }

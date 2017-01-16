@@ -1,5 +1,6 @@
 package tech.jinhaoma.AnkiMaker.WordMaker;
 import tech.jinhaoma.AnkiMaker.common.Check;
+import tech.jinhaoma.AnkiMaker.common.ComparatorByValue;
 
 import java.io.*;
 
@@ -10,10 +11,13 @@ import java.util.*;
 public class WordCounter {
     public static void main(String[] args) throws IOException {
 
-        getRankedWord(20,9999999,"E:\\all.txt", "E:\\Myfile\\ANKI卡包\\文本\\rankedWord.txt");
+        getRankedWord(30,9999999,
+                "E:\\all.txt",
+                "E:\\Myfile\\ANKI卡包\\文本\\rankedWord.txt");
 
     }
     static void getRankedWord(int lower,int upper,String inFile, String outFile) {
+
 
         Map<String,Integer> mp = new TreeMap<>();
         ArrayList<String> res = new ArrayList<>();
@@ -25,7 +29,7 @@ public class WordCounter {
 
             while ((line = br.readLine()) != null) {
 
-                String[] s = line.split("[ .?!]");
+                String[] s = line.split("[ .?!]|--");
 
                 for(String word : s){
                     if(mp.get(Filter(word)) != null){
@@ -37,14 +41,24 @@ public class WordCounter {
                 }
 
             }
+            List<Map.Entry<String,Integer>> array = new ArrayList<Map.Entry<String,Integer>>(mp.entrySet());
+            Collections.sort(array,new ComparatorByValue());
             Iterator iter = mp.keySet().iterator();
-            while (iter.hasNext()) {
-                String word = (String )iter.next();
-                if(lower <= mp.get(word) && mp.get(word) <= upper){
-                    res.add(word);
-//                    System.out.println(word+"_"+mp.get(word));
+
+            for(Map.Entry<String,Integer> word : array){
+
+                if(lower <= word.getValue() && word.getValue() <= upper){
+                    res.add(word.getKey());
+                    System.out.println(word.getValue()+"_"+word.getKey());
                 }
             }
+//            while (iter.hasNext()) {
+//                String word = (String )iter.next();
+//                if(lower <= mp.get(word) && mp.get(word) <= upper){
+//                    res.add(word);
+////                    System.out.println(word+"_"+mp.get(word));
+//                }
+//            }
             System.out.println(res.size());
             fis.close();
         } catch(Exception e){
@@ -81,15 +95,17 @@ public class WordCounter {
         }
         for(int i =  ch.length-1 ; i >= 0 ; i--){
             if(Character.isLetter(ch[i])){
-                e = i ;
+                e = i+1;
                 break;
             }
         }
-        if(s < e+1 && e+1 < str.length() && e-s > 1){
 
-            return str.substring(s,e+1);
+        String word = str.substring(s,e).toLowerCase();
+        if(s < e && e < str.length() && e-s > 2 && Check.isEnglishWord(word) ){
+            return word;
         }   else {
             return "".toString();
         }
     }
 }
+
