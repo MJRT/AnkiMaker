@@ -9,18 +9,19 @@ import tech.jinhaoma.AnkiMaker.common.BaiduTransApi;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
+import java.util.concurrent.Callable;
 
 /**
  * Created by mjrt on 1/17/2017.
  */
-public class BaiduSearchOnline {
+public class BaiduSearchOnline implements Callable<BaiduData> {
 
     private static final String APP_ID = "20160903000028063";
     private static final String SECURITY_KEY = "DOCPBODmVTKaLfuHIBoV";
 
     public static void main(String[] args) throws IOException {
 
-        BaiduData bd = Search("look");
+        BaiduData bd = Search("eates24asdas");
         System.out.println(bd.toString());
     }
 
@@ -32,5 +33,10 @@ public class BaiduSearchOnline {
         BaiduData bd = mapper.readValue(json,BaiduData.class);
 
         return bd;
+    }
+
+    @Override
+    public BaiduData call() throws Exception {
+        return null;
     }
 }
