@@ -1,38 +1,54 @@
 package tech.jinhaoma.AnkiMaker.search;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import tech.jinhaoma.AnkiMaker.bean.VocabularyData;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
 /**
  * Created by mjrt on 1/17/2017.
  */
-public class VocabularySearchOnline {
+@Log4j2
+@AllArgsConstructor
+@NoArgsConstructor
+public class VocabularySearchOnline implements Callable<VocabularyData>{
 
-    static String url = "https://www.vocabulary.com/dictionary/";
+    private final static String url = "https://www.vocabulary.com/dictionary/";
+
+    private String word;
 
     public static void main(String[] args) throws IOException {
         Search("eates");
     }
 
-    public static void Search(String word) throws IOException {
+    public static VocabularyData Search(String word) throws IOException {
 
         Document doc = Jsoup.connect(url+word).get();
-        VocabularyData vd = new VocabularyData();
 
+        Element originWord = doc.getElementsByClass("dynamictext").first();
         Element shortExplain = doc.getElementsByClass("short").first();
         Element longExplain = doc.getElementsByClass("long").first();
 
-        Element cz = doc.getElementsByClass("didyoumean").first();
-        Element wd = doc.getElementsByClass("dynamictext").first();
 
-        System.out.println(wd == null);
-
-        System.out.println(wd.text());
+        if(originWord == null){
+            return null;
+        } else {
+            return new VocabularyData(originWord.text(),
+                                      shortExplain.text(),
+                                      longExplain.text());
+        }
 
     }
 
+    @Override
+    public VocabularyData call() throws Exception {
+        return Search(word);
+    }
 }
