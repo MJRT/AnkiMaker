@@ -17,7 +17,7 @@ public class BaiduTransApi {
 
     public String getTransResult(String query, String from, String to) throws UnsupportedEncodingException {
         Map<String, String> params = buildParams(query, from, to);
-        return HttpGet.get(TRANS_API_HOST, params);
+        return HttpUtils.get(TRANS_API_HOST, params);
     }
 
     private Map<String, String> buildParams(String query, String from, String to) throws UnsupportedEncodingException {

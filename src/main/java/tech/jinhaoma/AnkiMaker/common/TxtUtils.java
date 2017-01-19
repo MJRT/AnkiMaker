@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by mjrt on 1/18/2017.
  */
-public class TxtOperator {
+public class TxtUtils {
     public static ArrayList<String> readTxt(String path,  String encode) throws IOException {
         FileInputStream fis = new FileInputStream(path);
         InputStreamReader isr = new InputStreamReader(fis, encode);

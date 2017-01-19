@@ -17,6 +17,6 @@ public class VocabularyData {
     private String word;
     private String shortExplain ;
     private String longExplain ;
-
+    private String mean;
 
 }
