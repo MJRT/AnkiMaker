@@ -18,7 +18,6 @@ import java.util.concurrent.FutureTask;
 @Log4j2
 public class BaiduTask {
 
-
     public List<BaiduData> asyncBaiduTask(List<String> words) throws ExecutionException, InterruptedException {
 
         ExecutorService executor = Executors.newCachedThreadPool();
