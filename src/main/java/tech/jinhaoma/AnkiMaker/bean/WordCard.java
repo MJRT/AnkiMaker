@@ -12,10 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class WordCard {
 
+    private Long id;
     private String word;
     private String aps;
-    private String meanOfEnglish;
-    private String meanOfChinses;
+    private String meanEnglish;
+    private String meanChinses;
     private String sentence;
     private String note;
+
 }

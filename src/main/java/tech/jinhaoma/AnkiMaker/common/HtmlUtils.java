@@ -1,0 +1,20 @@
+package tech.jinhaoma.AnkiMaker.common;
+
+/**
+ * Created by mjrt on 1/19/2017.
+ */
+public class HtmlUtils {
+
+    public static String addStrong(String text){
+        return "<strong>" + text + "</strong>";
+    }
+
+    public static String removeLineFeeds(String text){
+        String[] tmp = text.split("\n");
+        StringBuffer result = new StringBuffer();
+        for (String t : tmp){
+            result.append(t);
+        }
+        return result.toString();
+    }
+}

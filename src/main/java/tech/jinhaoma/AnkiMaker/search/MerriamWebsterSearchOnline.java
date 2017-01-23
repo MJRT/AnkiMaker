@@ -28,7 +28,9 @@ public class MerriamWebsterSearchOnline implements Callable<MerriamWebsterData>{
 
     private String word;
 
-    //暂时只处理单词格式
+    /*
+    暂时只处理单词格式
+     */
     public MerriamWebsterData Search(String word) throws IOException {
 
         Document doc = Jsoup.connect(url+word+key).ignoreContentType(true).get();
@@ -38,9 +40,12 @@ public class MerriamWebsterSearchOnline implements Callable<MerriamWebsterData>{
         if(originWord == null){
             log.error("\"" + word + "\" " + "does not exist.");
             return null;
-        }else {
-            return new MerriamWebsterData(originWord.text(),splitWord.text());
         }
+
+        MerriamWebsterData result = new MerriamWebsterData();
+        result.setWord(originWord.text());
+        result.setSplitWord(splitWord == null?originWord.text():splitWord.text());
+        return result;
 
     }
 

@@ -9,8 +9,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import tech.jinhaoma.AnkiMaker.bean.VocabularyData;
+import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
 
 /**
@@ -34,33 +37,50 @@ public class VocabularySearchOnline implements Callable<VocabularyData>{
         Document doc = Jsoup.connect(url+word).get();
 
         Element originWord = doc.getElementsByClass("dynamictext").first();
-        Element shortExplain = doc.getElementsByClass("short").first();
-        Element longExplain = doc.getElementsByClass("long").first();
-        Elements group = doc.getElementsByClass("group");
-
-
-        StringBuffer sb = new StringBuffer();
-        for(Element tran : group){
-            Elements mean = tran.getElementsByClass("definition");
-            sb.append(tran.getElementsByClass("groupNumber").text()+".");
-            for (Element t : mean){
-
-            }
+        if(originWord == null){
+            log.error("\"" + word + "\" " + "does not exist.");
+            return null;
         }
 
-        if(originWord == null)
-            return null;
 
-        VocabularyData result = new VocabularyData();
-        result.setMean(originWord.text());
-        result.setShortExplain(shortExplain.text());
-        result.setLongExplain(longExplain.text());
+        Element shortExplain = doc.getElementsByClass("short").first();
+        Element longExplain = doc.getElementsByClass("long").first();
 
+        List<String> meanTemp = new ArrayList<>();
+        List<String> sentenceTemp = new ArrayList<>();
 
+        Elements group = doc.getElementsByClass("group");
+        for(Element tran : group){
+            Elements ordinal = tran.getElementsByClass("ordinal");
+            for(Element mean : ordinal){
+                Elements sense = mean.getElementsByClass("sense");
 
+                StringBuffer wordMean = new StringBuffer();
+                StringBuffer stringBuffer = new StringBuffer();
+
+                for(Element t : sense){
+                    wordMean.append(t.getElementsByClass("definition").first().html());
+                    wordMean.append("<br>");
+
+                    Elements example = t.getElementsByClass("example");
+                    if(example == null) {
+                        stringBuffer.append("");
+                    } else {
+                        for(Element sentence : example){
+                            stringBuffer.append(sentence.html());
+                            stringBuffer.append("<br>");
+                        }
+                    }
+                }
+                meanTemp.add(wordMean.toString());
+                sentenceTemp.add(HtmlUtils.removeLineFeeds(stringBuffer.toString()));
+            }
+
+        }
+
+        VocabularyData result = new VocabularyData(originWord.text(),shortExplain.text(),longExplain.text(),meanTemp,sentenceTemp);
+        System.out.println(result.toString());
         return result;
-
-
     }
 
     @Override
