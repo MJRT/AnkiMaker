@@ -22,8 +22,6 @@ import java.util.concurrent.FutureTask;
 @NoArgsConstructor
 public class MerriamWebsterTask extends AsyncTask<MerriamWebsterSearchOnline,MerriamWebsterData>{
 
-    private int sleepTime;
-
     public List<MerriamWebsterData> asyncMerriamWebsterTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException {
         return asyncTask(words,MerriamWebsterSearchOnline.class);
     }

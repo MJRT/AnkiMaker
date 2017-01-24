@@ -23,8 +23,6 @@ import java.util.concurrent.FutureTask;
 @NoArgsConstructor
 public class VocabularyTask extends AsyncTask<VocabularySearchOnline,VocabularyData>{
 
-    private int sleepTime;
-
     public List<VocabularyData> asyncVocabularyTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException, InvocationTargetException {
         return asyncTask(words,VocabularySearchOnline.class);
     }

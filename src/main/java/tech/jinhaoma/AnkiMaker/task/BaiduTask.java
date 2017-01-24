@@ -19,12 +19,9 @@ import java.util.concurrent.FutureTask;
  * Created by mjrt on 1/19/2017.
  */
 @Log4j2
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class BaiduTask extends AsyncTask<BaiduSearchOnline,BaiduData>{
-
-    private int sleepTime;
 
     public List<BaiduData> asyncBaiduTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException {
         return asyncTask(words,BaiduSearchOnline.class);

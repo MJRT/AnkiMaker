@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2036fb86-dcdd-43f9-9057-9d2dba825339" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCardMaker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/WordCard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/bean/WordCard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/BaiduTransApi.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/HtmlUtils.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/HtmlUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BingSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BingSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/MerriamWebsterSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/MerriamWebsterSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/VocabularySearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/VocabularySearchOnline.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/bean/BaiduData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/BaiduData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/bean/BaiduResult.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/BaiduResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/bean/BingData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/BingData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/bean/MerriamWebsterData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/MerriamWebsterData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/bean/VocabularyData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/VocabularyData.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,8 +49,8 @@
       <file leaf-file-name="VocabularyTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+            <state relative-caret-position="39">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -74,8 +59,8 @@
       <file leaf-file-name="BingTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+            <state relative-caret-position="228">
+              <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -96,8 +81,8 @@
       <file leaf-file-name="MerriamWebsterTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="22" column="97" lean-forward="false" selection-start-line="22" selection-start-column="97" selection-end-line="22" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -116,14 +101,14 @@
       <file leaf-file-name="BaiduTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="27">
+              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnkiMakerServiceApplication.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AnkiMakerServiceApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/AnkiMakerServiceApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
@@ -136,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncTask.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AsyncTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="471">
+              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -178,6 +163,7 @@
       <find>MerriamWebster</find>
       <find>Baidu</find>
       <find>Bing</find>
+      <find>sleepTime</find>
     </findStrings>
     <replaceStrings>
       <replace>so</replace>
@@ -243,12 +229,12 @@
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/TextToCloze.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/EudicDictToWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCounter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCardMaker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/VocabularySearchOnline.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java" />
       </list>
     </option>
@@ -1100,7 +1086,7 @@
       <workItem from="1485175159154" duration="10002000" />
       <workItem from="1485214735551" duration="19383000" />
       <workItem from="1485260810585" duration="5787000" />
-      <workItem from="1485268578905" duration="1113000" />
+      <workItem from="1485268578905" duration="1384000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1484571896585</created>
@@ -1158,11 +1144,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484842018765</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="generics and basic finished">
+      <created>1485269868029</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1485269868029</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130420000" />
+    <option name="totallyTimeSpent" value="130691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1226,7 +1219,8 @@
     <MESSAGE value="do some fix" />
     <MESSAGE value="some adjust" />
     <MESSAGE value="add bing data &amp;&amp; finish vocab &amp;&amp;  some adjust" />
-    <option name="LAST_COMMIT_MESSAGE" value="add bing data &amp;&amp; finish vocab &amp;&amp;  some adjust" />
+    <MESSAGE value="generics and basic finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="generics and basic finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1374,6 +1368,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1492,14 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCardMaker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1647">
@@ -1515,40 +1502,6 @@
         <state relative-caret-position="2619">
           <caret line="110" column="5" lean-forward="false" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1585,6 +1538,48 @@
           <folding>
             <element signature="e#306#307#0" expanded="true" />
             <element signature="e#384#385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="97" lean-forward="false" selection-start-line="22" selection-start-column="97" selection-end-line="22" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

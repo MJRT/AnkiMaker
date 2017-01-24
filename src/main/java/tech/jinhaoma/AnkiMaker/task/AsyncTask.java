@@ -1,6 +1,7 @@
 package tech.jinhaoma.AnkiMaker.task;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import tech.jinhaoma.AnkiMaker.model.BaiduData;
@@ -15,23 +16,12 @@ import java.util.concurrent.*;
  * Created by mjrt on 1/24/2017.
  */
 @Log4j2
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class AsyncTask<Search,Data> {
 
-    private int sleepTime;
-
-    public static void main(String[] args) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException {
-        AsyncTask asyncTask = new AsyncTask<BaiduSearchOnline,BaiduData>();
-        List<String> words = new ArrayList<>();
-        words.add("eat");
-        words.add("people");
-        List<?> res = asyncTask.asyncTask(words,BaiduSearchOnline.class);
-
-        for(int i = 0 ; i < res.size() ; i++){
-            System.out.println(res.get(i).toString());
-        }
-    }
+    protected int sleepTime;
 
     public List<Data> asyncTask(List<String> words,Class<Search> searchClass) throws ExecutionException, InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 

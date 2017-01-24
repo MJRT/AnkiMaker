@@ -22,8 +22,6 @@ import java.util.concurrent.FutureTask;
 @NoArgsConstructor
 public class BingTask extends AsyncTask<BingSearchOnline,BingData>{
 
-    private int sleepTime;
-
     public List<BingData> asyncBingTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException {
         return asyncTask(words,BingSearchOnline.class);
     }
