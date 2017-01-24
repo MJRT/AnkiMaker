@@ -1,7 +1,6 @@
-package tech.jinhaoma.AnkiMaker.bean;
+package tech.jinhaoma.AnkiMaker.model;
 
 import lombok.*;
-import org.jsoup.nodes.Element;
 
 import java.util.List;
 
@@ -29,17 +28,15 @@ public class VocabularyData {
 
 
         for(int i = 0 ; i < mean.size() ; i++){
-            buffer.append("mean" + i + "=" + mean.get(i) + "-"+"\n");
+            buffer.append("mean" + i + "=" + mean.get(i) +"\n");
             buffer.append("sentence"+i+"=" + sentence.get(i) +"\n");
         }
 
-
         return "VocabularyData{" +  '\n'+
-                "word='" + word + '\n' +
-                "shortExplain='" + shortExplain + '\n' +
-                "longExplain='" + longExplain + '\n' +
+                "word=" + word + '\n' +
+                "shortExplain=" + shortExplain + '\n' +
+                "longExplain=" + longExplain + '\n' +
                 buffer.toString() +
-
                 '}';
     }
 }

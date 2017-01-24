@@ -3,13 +3,11 @@ package tech.jinhaoma.AnkiMaker.search;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-import tech.jinhaoma.AnkiMaker.bean.BaiduData;
-import tech.jinhaoma.AnkiMaker.common.BaiduTransApi;
+import tech.jinhaoma.AnkiMaker.model.BaiduData;
 import tech.jinhaoma.AnkiMaker.common.HttpUtils;
 import tech.jinhaoma.AnkiMaker.common.MD5;
 

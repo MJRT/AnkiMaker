@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.bean;
+package tech.jinhaoma.AnkiMaker.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

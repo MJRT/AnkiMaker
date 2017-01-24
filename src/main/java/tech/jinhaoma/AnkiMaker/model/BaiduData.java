@@ -1,6 +1,5 @@
-package tech.jinhaoma.AnkiMaker.bean;
+package tech.jinhaoma.AnkiMaker.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,12 @@
 package tech.jinhaoma.AnkiMaker.task;
 
-import tech.jinhaoma.AnkiMaker.bean.BingData;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import tech.jinhaoma.AnkiMaker.model.BingData;
 import tech.jinhaoma.AnkiMaker.search.BingSearchOnline;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -13,9 +17,17 @@ import java.util.concurrent.FutureTask;
 /**
  * Created by mjrt on 1/23/2017.
  */
-public class BingTask {
+@Log4j2
+@AllArgsConstructor
+@NoArgsConstructor
+public class BingTask extends AsyncTask<BingSearchOnline,BingData>{
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    private int sleepTime;
+
+    public List<BingData> asyncBingTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException {
+        return asyncTask(words,BingSearchOnline.class);
+    }
+    public static void main(String[] args) throws ExecutionException, InterruptedException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         BingTask bingTask = new BingTask();
         ArrayList<String> s = new ArrayList<>();
         s.add("eat");
@@ -28,31 +40,5 @@ public class BingTask {
         }
     }
 
-    public List<BingData> asyncBingTask(List<String> words) throws ExecutionException, InterruptedException {
 
-        ExecutorService executor = Executors.newCachedThreadPool();
-        ArrayList<BingSearchOnline> so = new ArrayList<>();
-        ArrayList<FutureTask<BingData>> ft = new ArrayList<>();
-
-        for(int i = 0 ; i < words.size() ; i++){
-            so.add(new BingSearchOnline(words.get(i)));
-        }
-
-        for(int i = 0 ; i < words.size() ; i++){
-            ft.add( new FutureTask<BingData>(so.get(i)));
-        }
-
-        for(int i = 0 ; i < words.size() ; i++){
-            executor.execute(ft.get(i));
-        }
-
-        ArrayList<BingData> result = new ArrayList<>();
-
-        for(int i = 0 ; i < words.size() ; i++){
-            result.add(i,ft.get(i).get());
-        }
-        executor.shutdown();
-
-        return result;
-    }
 }

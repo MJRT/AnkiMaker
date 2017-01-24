@@ -3,13 +3,12 @@ package tech.jinhaoma.AnkiMaker.search;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import tech.jinhaoma.AnkiMaker.bean.MerriamWebsterData;
+import tech.jinhaoma.AnkiMaker.model.MerriamWebsterData;
 
 import java.io.IOException;
 import java.util.concurrent.Callable;
@@ -28,6 +27,11 @@ public class MerriamWebsterSearchOnline implements Callable<MerriamWebsterData>{
 
     private String word;
 
+    public static void main(String[] args) throws IOException {
+
+        System.out.println(new MerriamWebsterSearchOnline().Search("easily"));
+    }
+
     /*
     暂时只处理单词格式
      */
@@ -44,14 +48,20 @@ public class MerriamWebsterSearchOnline implements Callable<MerriamWebsterData>{
 
         MerriamWebsterData result = new MerriamWebsterData();
         result.setWord(originWord.text());
-        result.setSplitWord(splitWord == null?originWord.text():splitWord.text());
+        result.setSplitWord(splitWord == null?originWord.text():ReplaceStarWithDash(splitWord.text()));
         return result;
 
     }
 
-    public static void main(String[] args) throws IOException {
-
-        System.out.println(new MerriamWebsterSearchOnline().Search("amount"));
+    private String ReplaceStarWithDash(String line){
+        String[] s = line.split("[*]");
+        StringBuffer buffer = new StringBuffer();
+        for(String t : s){
+            buffer.append(t);
+            buffer.append("-");
+        }
+        buffer.deleteCharAt(buffer.length()-1);
+        return buffer.toString();
     }
 
     @Override

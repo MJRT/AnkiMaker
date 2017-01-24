@@ -1,14 +1,13 @@
 package tech.jinhaoma.AnkiMaker.search;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import tech.jinhaoma.AnkiMaker.bean.VocabularyData;
+import tech.jinhaoma.AnkiMaker.model.VocabularyData;
 import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
 
 import java.io.IOException;
@@ -28,18 +27,27 @@ public class VocabularySearchOnline implements Callable<VocabularyData>{
 
     private String word;
 
-    public static void main(String[] args) throws IOException {
-        Search("eat");
-    }
 
-    public static VocabularyData Search(String word) throws IOException {
 
-        Document doc = Jsoup.connect(url+word).get();
+    public  VocabularyData Search(String word) throws IOException {
+
+        Document doc = Jsoup.connect(url+word).userAgent(HtmlUtils.userAgent).get();
 
         Element originWord = doc.getElementsByClass("dynamictext").first();
         if(originWord == null){
-            log.error("\"" + word + "\" " + "does not exist.");
-            return null;
+            String t = word.substring(0,1).toUpperCase() + word.substring(1,word.length());
+            if(t.substring(0,1).equals(word.substring(0,1))){
+                return null;
+            }
+            VocabularyData result = Search(t);
+
+            if(result == null){
+                log.error("\"" + word + "\" " + "does not exist.");
+            } else {
+                word = t;
+            }
+
+            return result;
         }
 
 
@@ -59,15 +67,25 @@ public class VocabularySearchOnline implements Callable<VocabularyData>{
                 StringBuffer stringBuffer = new StringBuffer();
 
                 for(Element t : sense){
+
+                    Element  wordclass = t.getElementsByClass("anchor").get(0);
+                    String tmp = wordclass.text();
+                    switch (tmp){
+                        case"n"   : wordclass.addClass("pos_n");break;
+                        case"v"   : wordclass.addClass("pos_v");break;
+                        case"adj" : wordclass.addClass("pos_a");break;
+                        case"adv" : wordclass.addClass("pos_r");break;
+                    }
+                    wordclass.appendText(".");
                     wordMean.append(t.getElementsByClass("definition").first().html());
                     wordMean.append("<br>");
 
-                    Elements example = t.getElementsByClass("example");
-                    if(example == null) {
+                    Elements examples = t.getElementsByClass("example");
+                    if(examples == null) {
                         stringBuffer.append("");
                     } else {
-                        for(Element sentence : example){
-                            stringBuffer.append(sentence.html());
+                        for(Element example : examples){
+                            stringBuffer.append(example.html());
                             stringBuffer.append("<br>");
                         }
                     }
@@ -78,8 +96,12 @@ public class VocabularySearchOnline implements Callable<VocabularyData>{
 
         }
 
-        VocabularyData result = new VocabularyData(originWord.text(),shortExplain.text(),longExplain.text(),meanTemp,sentenceTemp);
-        System.out.println(result.toString());
+        VocabularyData result = new VocabularyData();
+        result.setWord(originWord.text());
+        result.setShortExplain(shortExplain == null ? "" : shortExplain.text());
+        result.setLongExplain(longExplain == null ? "" : longExplain.text());
+        result.setMean(meanTemp);
+        result.setSentence(sentenceTemp);
         return result;
     }
 
@@ -87,6 +109,8 @@ public class VocabularySearchOnline implements Callable<VocabularyData>{
     public VocabularyData call() throws Exception {
         return Search(word);
     }
-
+    public static void main(String[] args) throws IOException {
+        System.out.println(new VocabularySearchOnline().Search("mediterranean").toString());;
+    }
 
 }

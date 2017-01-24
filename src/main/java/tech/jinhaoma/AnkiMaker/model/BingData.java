@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.bean;
+package tech.jinhaoma.AnkiMaker.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BingData {
 
+    private String word;
     private String apsUs ;
     private String meanChinese;
 }
