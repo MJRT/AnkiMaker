@@ -1,11 +1,13 @@
 package tech.jinhaoma.AnkiMaker.common;
 
-import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
+
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -122,7 +124,7 @@ public class HttpUtils {
 
     /**
      * 对输入的字符串进行URL编码, 即转换为%20这种形式
-     * 
+     *
      * @param input 原文
      * @return URL编码. 如果编码失败, 则返回原文
      */
@@ -155,5 +157,68 @@ public class HttpUtils {
         public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
         }
     };
+//        public static String get(String url){
+//            HttpClient client = new DefaultHttpClient();
+//            HttpGet  request = new HttpGet(url);
+//            try {
+//                HttpResponse response = client.execute(request);
+//                int code = response.getStatusLine().getStatusCode();
+//                if(code == 200){
+//                    InputStream in = response.getEntity().getContent();
+//                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+//                    byte[] buffer = new byte[1024];
+//                    while(true){
+//                        int len = in.read(buffer);
+//                        if(len == -1) break;
+//                        out.write(buffer,0,len);
+//                    }
+//                    byte[] result = out.toByteArray();
+//                    return result.toString();
+//                }else{
+//                    return "error";
+//                }
+//
+//            } catch (ClientProtocolException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//                return "error";
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//                return "error";
+//            }
+//
+//        }
+        public static String post(String uri,byte[] param){
 
+            byte[] result = null;
+            try {
+                URL url = new URL(uri);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                OutputStream outStream = conn.getOutputStream();
+                outStream.write(param);
+                InputStream in = conn.getInputStream();
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                byte[] buffer = new byte[1024];
+                while(true){
+                    int len = in.read(buffer);
+                    if(len == -1) break;
+                    out.write(buffer,0,len);
+                }
+                result = out.toByteArray();
+
+
+            } catch (MalformedURLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            return result.toString();
+        }
 }

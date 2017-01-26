@@ -7,9 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-import tech.jinhaoma.AnkiMaker.model.BaiduData;
+import tech.jinhaoma.AnkiMaker.domain.BaiduData;
 import tech.jinhaoma.AnkiMaker.common.HttpUtils;
 import tech.jinhaoma.AnkiMaker.common.MD5;
+
 
 import java.io.IOException;
 
@@ -28,7 +29,6 @@ import java.util.concurrent.Callable;
 @NoArgsConstructor
 public class BaiduSearchOnline implements Callable<BaiduData> {
     private static final String TRANS_API_HOST = "http://api.fanyi.baidu.com/api/trans/vip/translate";
-
     private static final String APP_ID = "20160903000028063";
     private static final String SECURITY_KEY = "DOCPBODmVTKaLfuHIBoV";
 
@@ -38,6 +38,9 @@ public class BaiduSearchOnline implements Callable<BaiduData> {
 //    private String SECURITY_KEY ;
 
     private String word;
+
+//    @Autowired
+//    BaiduDataRepository baiduDataRepository ;
 
     public BaiduSearchOnline(String word) {
         this.word = word;
@@ -55,8 +58,10 @@ public class BaiduSearchOnline implements Callable<BaiduData> {
         String json = getTransResult(word, "auto", "zh");
         ObjectMapper mapper = new ObjectMapper();
         BaiduData bd = mapper.readValue(json,BaiduData.class);
-
+        bd.setSrc(bd.getTrans_result().get(0).getSrc());
+        bd.setDst(bd.getTrans_result().get(0).getDst());
         return bd;
+
     }
 
     @Override

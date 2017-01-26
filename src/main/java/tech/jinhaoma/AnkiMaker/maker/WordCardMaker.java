@@ -1,10 +1,10 @@
 package tech.jinhaoma.AnkiMaker.maker;
 
 import tech.jinhaoma.AnkiMaker.common.TxtUtils;
-import tech.jinhaoma.AnkiMaker.model.BingData;
-import tech.jinhaoma.AnkiMaker.model.MerriamWebsterData;
-import tech.jinhaoma.AnkiMaker.model.VocabularyData;
-import tech.jinhaoma.AnkiMaker.model.WordCard;
+import tech.jinhaoma.AnkiMaker.domain.BingData;
+import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
+import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
+import tech.jinhaoma.AnkiMaker.domain.WordCard;
 import tech.jinhaoma.AnkiMaker.task.BingTask;
 import tech.jinhaoma.AnkiMaker.task.MerriamWebsterTask;
 import tech.jinhaoma.AnkiMaker.task.VocabularyTask;

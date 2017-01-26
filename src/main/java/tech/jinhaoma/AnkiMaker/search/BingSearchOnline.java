@@ -6,9 +6,8 @@ import lombok.NoArgsConstructor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
-import tech.jinhaoma.AnkiMaker.model.BingData;
+import tech.jinhaoma.AnkiMaker.domain.BingData;
 
 import java.io.IOException;
 import java.util.concurrent.Callable;
@@ -20,7 +19,7 @@ import java.util.concurrent.Callable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BingSearchOnline implements Callable<BingData>{
-    static final private String host = "http://www.bing.com/dict/search?q=";
+    static final private String host = "http://cn.bing.com/dict/search?q=";
 
     private String word;
 
@@ -47,6 +46,7 @@ public class BingSearchOnline implements Callable<BingData>{
         String meanChinese = ul == null ? "" : ul.html();
 
         BingData bd = new BingData();
+        bd.setWord(originWord.text());
         bd.setApsUs(apsUs);
         bd.setMeanChinese(HtmlUtils.removeLineFeeds(meanChinese));
 

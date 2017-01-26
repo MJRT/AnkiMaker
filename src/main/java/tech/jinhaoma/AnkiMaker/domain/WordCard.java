@@ -1,11 +1,8 @@
-package tech.jinhaoma.AnkiMaker.model;
+package tech.jinhaoma.AnkiMaker.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import javax.persistence.*;
 
@@ -16,11 +13,12 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+//@Entity
+//@Table(name = "WordCard")
 public class WordCard {
 
-    @Id
-    @GeneratedValue
+//    @Id
+//    @GeneratedValue
     private Long id;
 
     private String word;

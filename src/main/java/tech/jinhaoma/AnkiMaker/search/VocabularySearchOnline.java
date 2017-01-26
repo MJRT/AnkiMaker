@@ -7,7 +7,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import tech.jinhaoma.AnkiMaker.model.VocabularyData;
+import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
 import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
 
 import java.io.IOException;

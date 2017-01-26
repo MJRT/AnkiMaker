@@ -3,28 +3,33 @@ package tech.jinhaoma.AnkiMaker.task;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import tech.jinhaoma.AnkiMaker.model.BaiduData;
+
+import tech.jinhaoma.AnkiMaker.domain.BaiduData;
+
 import tech.jinhaoma.AnkiMaker.search.BaiduSearchOnline;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.FutureTask;
 
 /**
  * Created by mjrt on 1/19/2017.
  */
 @Log4j2
 @NoArgsConstructor
-@AllArgsConstructor
 public class BaiduTask extends AsyncTask<BaiduSearchOnline,BaiduData>{
 
+    public BaiduTask(int sleepTime) {
+        super(sleepTime);
+    }
+
     public List<BaiduData> asyncBaiduTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException {
-        return asyncTask(words,BaiduSearchOnline.class);
+        List<BaiduData> baiduDatas = asyncTask(words,BaiduSearchOnline.class);
+
+        return baiduDatas;
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {

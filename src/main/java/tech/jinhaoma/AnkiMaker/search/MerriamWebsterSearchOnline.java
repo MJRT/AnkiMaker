@@ -8,7 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import tech.jinhaoma.AnkiMaker.model.MerriamWebsterData;
+import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
 
 import java.io.IOException;
 import java.util.concurrent.Callable;

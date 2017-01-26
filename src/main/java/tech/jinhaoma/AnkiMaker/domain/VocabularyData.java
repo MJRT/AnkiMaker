@@ -1,7 +1,11 @@
-package tech.jinhaoma.AnkiMaker.model;
+package tech.jinhaoma.AnkiMaker.domain;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.List;
 
 /**
@@ -13,8 +17,12 @@ import java.util.List;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+//@Entity
+//@Table(name = "VocabularyData")
 public class VocabularyData {
 
+//    @Id
+//    @GeneratedValue
     private String word;
     private String shortExplain ;
     private String longExplain ;

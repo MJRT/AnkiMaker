@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import tech.jinhaoma.AnkiMaker.model.BaiduData;
-import tech.jinhaoma.AnkiMaker.search.BaiduSearchOnline;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -15,15 +13,17 @@ import java.util.concurrent.*;
 /**
  * Created by mjrt on 1/24/2017.
  */
-@Log4j2
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class AsyncTask<Search,Data> {
 
     protected int sleepTime;
 
-    public List<Data> asyncTask(List<String> words,Class<Search> searchClass) throws ExecutionException, InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public int getSleepTime() {
+        return sleepTime;
+    }
+
+    public List<Data> asyncTask(List<String> words, Class<Search> searchClass) throws ExecutionException, InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 
         ExecutorService executor = Executors.newCachedThreadPool();
         ArrayList<Search> so = new ArrayList<>();
@@ -49,10 +49,10 @@ public class AsyncTask<Search,Data> {
                 result.add(i, ft.get(i).get());
         } catch (InterruptedException e) {
             e.printStackTrace();
-            log.error(words.get(i));
+//            log.error(words.get(i) +" - InterruptedException");
         } catch (ExecutionException e) {
             e.printStackTrace();
-            log.error(words.get(i));
+//            log.error(words.get(i)+ " - ExecutionException");
         }
         executor.shutdown();
 
