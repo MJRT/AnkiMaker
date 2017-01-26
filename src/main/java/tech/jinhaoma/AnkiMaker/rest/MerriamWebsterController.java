@@ -42,13 +42,6 @@ public class MerriamWebsterController {
     @RequestMapping(value = "/test")
     public String findByWord(){
 
-        MerriamWebsterData data = new MerriamWebsterData();
-        List<MerriamWebsterData> r = new ArrayList<>();
-        data.setWord("789");
-        data.setSplitWord("456");
-        r.add(data);
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.postForLocation("http://localhost:8888/MerriamWebster/upload",r);
 
         return "ok" ;
     }

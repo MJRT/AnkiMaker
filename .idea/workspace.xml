@@ -2,49 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2036fb86-dcdd-43f9-9057-9d2dba825339" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_2_13_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_1_3_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_1_8_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_hal_browser_2_4_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/mongoSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduDataRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BingDataRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/MerriamWebsterDataRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/VocabularyDataRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/WordCardRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/TestService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AnkiMaker.iml" afterPath="$PROJECT_DIR$/AnkiMaker.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/AnkiMakerServiceApplication.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/AnkiMakerServiceApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/HttpUtils.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/HttpUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCardMaker.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCardMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BingSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BingSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/MerriamWebsterSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/MerriamWebsterSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/VocabularySearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/VocabularySearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BaiduTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_6_3.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_3.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_3.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/BaiduData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/BaiduResult.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/BingData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BingData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/MerriamWebsterData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/MerriamWebsterData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/VocabularyData.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/VocabularyData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/model/WordCard.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/WordCard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,8 +39,8 @@
       <file leaf-file-name="BaiduController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="49" column="44" lean-forward="false" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
               <folding>
                 <element signature="e#809#810#0" expanded="true" />
                 <element signature="e#861#862#0" expanded="true" />
@@ -144,21 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MerriamWebsterData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/MerriamWebsterData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="72" selection-end-column="21" />
+              <caret line="50" column="31" lean-forward="false" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,11 +117,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaiduSearchOnline.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MerriamWebsterController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaiduSearchOnline.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="63" column="8" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+            <state relative-caret-position="396">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -288,15 +251,15 @@
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BingDataRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduResult.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiudController.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BingData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduData.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduDataRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java" />
       </list>
     </option>
   </component>
@@ -1188,7 +1151,7 @@
       <workItem from="1485413967159" duration="1315000" />
       <workItem from="1485418041040" duration="4141000" />
       <workItem from="1485434979185" duration="2050000" />
-      <workItem from="1485437213290" duration="11469000" />
+      <workItem from="1485437213290" duration="11606000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1484571896585</created>
@@ -1260,11 +1223,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485270011706</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="service">
+      <created>1485448713367</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1485448713367</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184268000" />
+    <option name="totallyTimeSpent" value="184405000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1286,9 +1256,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33069083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33069083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1335,7 +1305,8 @@
     <MESSAGE value="some adjust" />
     <MESSAGE value="add bing data &amp;&amp; finish vocab &amp;&amp;  some adjust" />
     <MESSAGE value="generics and basic finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="generics and basic finished" />
+    <MESSAGE value="service" />
+    <option name="LAST_COMMIT_MESSAGE" value="service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1454,6 +1425,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1509,6 +1481,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1645,18 +1618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="50" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/MerriamWebsterData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -1678,16 +1639,6 @@
         <state relative-caret-position="-27">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="24" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="72" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1719,19 +1670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#1189#1190#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BingSearchOnline.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1742,8 +1680,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="63" column="8" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+        <state relative-caret-position="396">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="49" column="44" lean-forward="false" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+          <folding>
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="50" column="31" lean-forward="false" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

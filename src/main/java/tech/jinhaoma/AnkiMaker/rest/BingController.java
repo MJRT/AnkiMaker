@@ -48,11 +48,7 @@ public class BingController {
         List<BingData> r = null;
         try {
             r = bingTask.asyncBingTask(s);
-            RestTemplate restTemplate = new RestTemplate();
-            for(BingData w : r){
-                System.out.println(w.toString());
-            }
-            restTemplate.postForLocation("http://localhost:8888/bing/upload",r);
+            repository.save(r);
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();

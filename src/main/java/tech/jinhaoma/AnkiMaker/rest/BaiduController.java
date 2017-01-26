@@ -48,12 +48,7 @@ public class BaiduController {
         List<BaiduData> r = null;
         try {
             r = BaiduTask.asyncBaiduTask(s);
-            RestTemplate restTemplate = new RestTemplate();
-            for(BaiduData w : r){
-                System.out.println(w.toString());
-            }
-            restTemplate.postForLocation("http://localhost:8888/baidu/upload",r);
-
+            repository.save(r);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
