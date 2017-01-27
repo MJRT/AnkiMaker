@@ -3,6 +3,7 @@ package tech.jinhaoma.AnkiMaker.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
 
 import javax.persistence.*;
 
@@ -17,8 +18,8 @@ import javax.persistence.*;
 //@Table(name = "WordCard")
 public class WordCard {
 
-//    @Id
-//    @GeneratedValue
+    @Id
+    @MongoGeneratedValue
     private Long id;
 
     private String word;

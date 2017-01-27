@@ -4,11 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 
 /**
@@ -18,12 +17,11 @@ import javax.persistence.Table;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "MerriamWebsterData")
+@Document(collection = "MerriamWebsterData")
 public class MerriamWebsterData {
     @Id
-    @GeneratedValue
-    private Long id;
+    @MongoGeneratedValue
+    private long id;
     private String word;
     private String splitWord;
 }

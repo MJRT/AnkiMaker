@@ -40,14 +40,15 @@ public class BaiduController {
     }
 
     @RequestMapping(value = "/test")
-    public String findByWord(){
+    public String test(){
 
         BaiduTask BaiduTask = new BaiduTask();
         ArrayList<String> s = new ArrayList<>();
-        s.add("easy");
+        s.add("web");
         List<BaiduData> r = null;
         try {
             r = BaiduTask.asyncBaiduTask(s);
+            System.out.println(r.get(0).toString());
             repository.save(r);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -62,7 +63,7 @@ public class BaiduController {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        return "ok" ;
+        return r.toString() ;
 
     }
 }

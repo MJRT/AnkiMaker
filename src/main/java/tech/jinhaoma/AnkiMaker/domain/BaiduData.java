@@ -3,6 +3,8 @@ package tech.jinhaoma.AnkiMaker.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
 
 
 import javax.persistence.*;
@@ -15,15 +17,15 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "BaiduData")
+@Document(collection = "BaiduData")
 public class BaiduData {
     @Id
+    @MongoGeneratedValue
     private long id;
 
-    @Column(name = "oriLanguage")
+    @Column(name = "fromLanguage")
     private String from;
-    @Column(name = "tranLanguage")
+    @Column(name = "toLanguage")
     private String to;
 
     private String word;

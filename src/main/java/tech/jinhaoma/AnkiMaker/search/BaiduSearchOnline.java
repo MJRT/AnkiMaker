@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
+import org.springframework.beans.factory.annotation.Value;
 import tech.jinhaoma.AnkiMaker.domain.BaiduData;
 import tech.jinhaoma.AnkiMaker.common.HttpUtils;
 import tech.jinhaoma.AnkiMaker.common.MD5;
@@ -32,15 +33,7 @@ public class BaiduSearchOnline implements Callable<BaiduData> {
     private static final String APP_ID = "20160903000028063";
     private static final String SECURITY_KEY = "DOCPBODmVTKaLfuHIBoV";
 
-//    @Value("${baidu.id}")
-//    private String APP_ID ;
-//    @Value("@{baidu.key}")
-//    private String SECURITY_KEY ;
-
     private String word;
-
-//    @Autowired
-//    BaiduDataRepository baiduDataRepository ;
 
     public BaiduSearchOnline(String word) {
         this.word = word;

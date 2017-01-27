@@ -1,11 +1,10 @@
 package tech.jinhaoma.AnkiMaker.domain;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -17,14 +16,16 @@ import java.util.List;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
-//@Table(name = "VocabularyData")
+@Document(collection = "VocabularyData")
 public class VocabularyData {
 
-//    @Id
-//    @GeneratedValue
+    @Id
+    @MongoGeneratedValue
+    private long id;
     private String word;
+    @Column(length = 4095)
     private String shortExplain ;
+    @Column(length = 4095)
     private String longExplain ;
     private List<String> mean;
     private List<String> sentence;
