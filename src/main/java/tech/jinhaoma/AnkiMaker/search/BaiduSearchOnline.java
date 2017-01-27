@@ -54,14 +54,12 @@ public class BaiduSearchOnline implements Callable<BaiduData> {
     }
 
     public  BaiduData Search(String word) throws IOException {
-
         String json = getTransResult(word, "auto", "zh");
         ObjectMapper mapper = new ObjectMapper();
         BaiduData bd = mapper.readValue(json,BaiduData.class);
-        bd.setSrc(bd.getTrans_result().get(0).getSrc());
-        bd.setDst(bd.getTrans_result().get(0).getDst());
+        bd.setWord(bd.getTrans_result().get(0).getSrc());
+        bd.setMean(bd.getTrans_result().get(0).getDst());
         return bd;
-
     }
 
     @Override

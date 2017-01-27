@@ -12,7 +12,6 @@ import javax.persistence.Embeddable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Embeddable
 public class BaiduResult {
     private String src;
     private String dst;

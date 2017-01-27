@@ -18,7 +18,6 @@ import javax.persistence.*;
 public class BingData {
 
     @Id
-    @GeneratedValue
     private Long id;
     private String word;
     private String apsUs ;

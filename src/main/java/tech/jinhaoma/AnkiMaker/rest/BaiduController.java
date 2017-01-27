@@ -62,9 +62,6 @@ public class BaiduController {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-
-
-
         return "ok" ;
 
     }

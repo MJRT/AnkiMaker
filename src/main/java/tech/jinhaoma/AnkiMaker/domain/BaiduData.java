@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
+
 import java.util.List;
 
 /**
@@ -16,20 +18,17 @@ import java.util.List;
 @Entity
 @Table(name = "BaiduData")
 public class BaiduData {
-
     @Id
-    @GeneratedValue
-    private Long id;
+    private long id;
 
     @Column(name = "oriLanguage")
     private String from;
     @Column(name = "tranLanguage")
     private String to;
 
-    private String src;
+    private String word;
     @Column(length = 4095)
-    private String dst;
+    private String mean;
 
-    @Transient
     private List<BaiduResult> trans_result;
 }

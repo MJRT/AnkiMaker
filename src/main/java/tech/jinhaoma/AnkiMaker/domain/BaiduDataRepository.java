@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by mjrt on 1/25/2017.
  */
 @RepositoryRestResource(path = "/baidu")
-public interface BaiduDataRepository extends JpaRepository<BaiduData, Long> {
+public interface BaiduDataRepository extends MongoRepository<BaiduData, Long> {
 
     /* /Search */
 
-    @RestResource(path = "/src",rel = "by-word")
-    Page<BaiduData> findBySrc(@Param("query") String word,Pageable pageable);
+    @RestResource(path = "/word",rel = "by-word")
+    Page<BaiduData> findByWord(@Param("query") String word,Pageable pageable);
 }
