@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by mjrt on 1/25/2017.
  */
-@RepositoryRestResource
+@RepositoryRestResource(path = "mv")
 public interface MerriamWebsterDataRepository extends MongoRepository<MerriamWebsterData, Long> {
-
+    MerriamWebsterData findByWord(String word);
 }

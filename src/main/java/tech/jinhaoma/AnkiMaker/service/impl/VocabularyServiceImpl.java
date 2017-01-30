@@ -1,11 +1,10 @@
-package tech.jinhaoma.AnkiMaker.rest;
+package tech.jinhaoma.AnkiMaker.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
 import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
-
 import tech.jinhaoma.AnkiMaker.domain.VocabularyDataRepository;
+import tech.jinhaoma.AnkiMaker.service.VocabularyService;
 import tech.jinhaoma.AnkiMaker.task.VocabularyTask;
 
 import java.lang.reflect.InvocationTargetException;
@@ -14,41 +13,30 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Created by mjrt on 1/27/2017.
+ * Created by mjrt on 1/30/2017.
  */
-@RestController
-@RequestMapping(value = "/vocab")
-public class VocabularyController {
-
-    private VocabularyDataRepository repository ;
-
+@Service
+public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,VocabularyDataRepository> implements VocabularyService{
     @Autowired
-    public VocabularyController(VocabularyDataRepository bingDataRepository ) {
-        this.repository = bingDataRepository;
-    }
+    public VocabularyServiceImpl(VocabularyDataRepository repository) {
+        super(repository);
+}
 
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
-    public void upload(@RequestBody List<VocabularyData> trucks) throws Exception {
-        this.repository.save(trucks);
-    }
+    @Override
+    public VocabularyData query(String word) {
 
-    @RequestMapping(value = "/purge", method = RequestMethod.DELETE)
-    public void purge() {
-        this.repository.deleteAll();
-    }
+        VocabularyData data = repository.findByWord(word);
 
-    @RequestMapping(value = "/test")
-    public String findByWord(){
+        if (data != null){
+            return data;
+        }
 
         VocabularyTask bingTask = new VocabularyTask();
         ArrayList<String> s = new ArrayList<>();
-        s.add("easy");
+        s.add(word);
         List<VocabularyData> r = null;
         try {
             r = bingTask.asyncVocabularyTask(s);
-            repository.save(r);
-
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -62,7 +50,18 @@ public class VocabularyController {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+        repository.save(r);
+        data = r.get(0);
 
-        return "ok" ;
+        if (data ==null)
+            return null;
+        return data;
+    }
+
+    @Override
+    public void purge(String word) {
+        VocabularyData data = repository.findByWord(word);
+        if(data != null)
+            repository.delete(data);
     }
 }

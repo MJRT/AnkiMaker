@@ -26,15 +26,12 @@ public class AsyncTask<Search,Data> {
     public List<Data> asyncTask(List<String> words, Class<Search> searchClass) throws ExecutionException, InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 
         ExecutorService executor = Executors.newCachedThreadPool();
-        ArrayList<Search> so = new ArrayList<>();
         ArrayList<FutureTask<Data>> ft = new ArrayList<>();
 
         for (int i = 0; i < words.size(); i++) {
-            so.add(searchClass.getConstructor(String.class).newInstance(words.get(i)));
-        }
-
-        for (int i = 0; i < words.size(); i++) {
-            ft.add(new FutureTask<>((Callable<Data>) so.get(i)));
+            ft.add(new FutureTask<>(
+                    (Callable<Data>) searchClass.getConstructor(String.class)
+                                                .newInstance(words.get(i))));
         }
 
         for (int i = 0; i < words.size(); i++) {

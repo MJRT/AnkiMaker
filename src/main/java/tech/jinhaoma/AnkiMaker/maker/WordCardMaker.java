@@ -35,25 +35,31 @@ public class WordCardMaker {
         List<WordCard> cards = new ArrayList<>();
         List<String> exception = new ArrayList<>();
 
-        for(int i = 0 ; i < vocabularyDatas.size() ; i++){
-            if(vocabularyDatas.get(i) == null){
-                exception.add(words.get(i));
-            } else {
-                List<String> means = vocabularyDatas.get(i).getMean();
-                for (int j = 0 ; j < means.size() ; j++){
-                    WordCard card = new WordCard();
-                    card.setWord(words.get(i));
-                    card.setAps(bingDatas.get(i).getApsUs());
-                    card.setMeanChinses(bingDatas.get(i).getMeanChinese());
-                    card.setSplitWord(merriamWebsterDatas.get(i).getSplitWord());
-                    card.setMeanEnglish(vocabularyDatas.get(i).getMean().get(j));
-                    card.setSentence(vocabularyDatas.get(i).getSentence().get(j));
-                    card.setExplain(vocabularyDatas.get(i).getShortExplain()+"<br>"+
-                                    vocabularyDatas.get(i).getLongExplain());
-                    cards.add(card);
-                }
-            }
+        for(int i = 0 ; i < words.size() ; i++){
+            cards.addAll(WordCard.install(bingDatas.get(i),
+                                          vocabularyDatas.get(i),
+                                          merriamWebsterDatas.get(i)));
         }
+
+//        for(int i = 0 ; i < vocabularyDatas.size() ; i++){
+//            if(vocabularyDatas.get(i) == null){
+//                exception.add(words.get(i));
+//            } else {
+//                List<String> means = vocabularyDatas.get(i).getMean();
+//                for (int j = 0 ; j < means.size() ; j++){
+//                    WordCard card = new WordCard();
+//                    card.setWord(words.get(i));
+//                    card.setAps(bingDatas.get(i).getApsUs());
+//                    card.setMeanChinses(bingDatas.get(i).getMeanChinese());
+//                    card.setSplitWord(merriamWebsterDatas.get(i).getSplitWord());
+//                    card.setMeanEnglish(vocabularyDatas.get(i).getMean().get(j));
+//                    card.setSentence(vocabularyDatas.get(i).getSentence().get(j));
+//                    card.setExplain(vocabularyDatas.get(i).getShortExplain()+"<br>"+
+//                                    vocabularyDatas.get(i).getLongExplain());
+//                    cards.add(card);
+//                }
+//            }
+//        }
 
         List<String> result = new ArrayList<>();
         for(WordCard card :cards){

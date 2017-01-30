@@ -19,16 +19,16 @@ import java.util.concurrent.Callable;
  * Created by mjrt on 1/17/2017.
  */
 @Log4j2
-@AllArgsConstructor
-@NoArgsConstructor
-public class VocabularySearchOnline implements Callable<VocabularyData>{
+public class VocabularySearchOnline extends SearchOnline<VocabularyData>{
 
     private final static String url = "https://www.vocabulary.com/dictionary/";
 
-    private String word;
-
-
-
+    public VocabularySearchOnline(String word) {
+        super(word);
+    }
+    public VocabularySearchOnline() {
+        super();
+    }
     public  VocabularyData Search(String word) throws IOException {
 
         Document doc = Jsoup.connect(url+word).userAgent(HtmlUtils.userAgent).get();

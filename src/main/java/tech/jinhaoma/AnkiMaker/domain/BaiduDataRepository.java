@@ -14,9 +14,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @RepositoryRestResource(path = "/baidu")
 public interface BaiduDataRepository extends MongoRepository<BaiduData, Long> {
-
-    /* /Search */
-
-    @RestResource(path = "/word",rel = "by-word")
-    Page<BaiduData> findByWord(@Param("query") String word,Pageable pageable);
+    BaiduData findByWord(String word);
 }

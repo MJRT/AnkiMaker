@@ -1,5 +1,7 @@
 package tech.jinhaoma.AnkiMaker.common;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +10,8 @@ import java.util.List;
  * Created by mjrt on 1/18/2017.
  */
 public class TxtUtils {
-    public static ArrayList<String> readTxt(String path,  String encode) throws IOException {
-        FileInputStream fis = new FileInputStream(path);
+    public static ArrayList<String> readTxt(MultipartFile file, String encode) throws IOException{
+        InputStream fis = file.getInputStream();
         InputStreamReader isr = new InputStreamReader(fis, encode);
         BufferedReader br = new BufferedReader(isr);
         String line = null;
@@ -21,6 +23,25 @@ public class TxtUtils {
         isr.close();
         fis.close();
         return result;
+    }
+
+    public static ArrayList<String> readTxt(File inFile,  String encode) throws IOException{
+        FileInputStream fis = new FileInputStream(inFile);
+        InputStreamReader isr = new InputStreamReader(fis, encode);
+        BufferedReader br = new BufferedReader(isr);
+        String line = null;
+        ArrayList<String> result = new ArrayList<>();
+        while ((line = br.readLine()) != null) {
+            result.add(line);
+        }
+        br.close();
+        isr.close();
+        fis.close();
+        return result;
+    }
+    public static ArrayList<String> readTxt(String path,  String encode) throws IOException {
+        File inFile = new File(path);
+        return readTxt(inFile,encode);
     }
 
     public static boolean writeTxt(String path, List<String> reslut, String encode) throws IOException {

@@ -1,18 +1,15 @@
 package tech.jinhaoma.AnkiMaker.service;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import tech.jinhaoma.AnkiMaker.domain.BaiduDataRepository;
-import tech.jinhaoma.AnkiMaker.domain.BingDataRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import tech.jinhaoma.AnkiMaker.domain.BingData;
+
+import java.util.List;
 
 /**
- * Created by mjrt on 1/25/2017.
+ * Created by mjrt on 1/30/2017.
  */
-@Service
-public interface BingService {
-
-
-
+public interface BingService extends CrudService<BingData> {
+    BingData query(String word);
+    void purge(String word);
 }

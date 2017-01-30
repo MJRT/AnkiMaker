@@ -16,11 +16,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @RepositoryRestResource(path = "/bing")
 public interface BingDataRepository extends MongoRepository<BingData, Long> {
-
-    /* /Search */
-
-    @RestResource(path = "/word",rel = "by-word")
-    Page<BingData> findByWord(@Param("query") String word,Pageable pageable);
-
     BingData findByWord(String word);
 }

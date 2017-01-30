@@ -3,6 +3,7 @@ package tech.jinhaoma.AnkiMaker.search;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -25,18 +26,13 @@ import java.util.concurrent.Callable;
  */
 
 @Log4j2
-@Data
-//@AllArgsConstructor
-@NoArgsConstructor
-public class BaiduSearchOnline implements Callable<BaiduData> {
+public class BaiduSearchOnline extends SearchOnline<BaiduData> {
     private static final String TRANS_API_HOST = "http://api.fanyi.baidu.com/api/trans/vip/translate";
     private static final String APP_ID = "20160903000028063";
     private static final String SECURITY_KEY = "DOCPBODmVTKaLfuHIBoV";
 
-    private String word;
-
     public BaiduSearchOnline(String word) {
-        this.word = word;
+        super(word);
     }
 
     public static void main(String[] args) throws Exception {
@@ -53,11 +49,6 @@ public class BaiduSearchOnline implements Callable<BaiduData> {
         bd.setWord(bd.getTrans_result().get(0).getSrc());
         bd.setMean(bd.getTrans_result().get(0).getDst());
         return bd;
-    }
-
-    @Override
-    public BaiduData call() throws Exception {
-        return Search(word);
     }
 
     public String getTransResult(String query, String from, String to) throws UnsupportedEncodingException {

@@ -1,11 +1,8 @@
 package tech.jinhaoma.AnkiMaker.task;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import tech.jinhaoma.AnkiMaker.domain.BingData;
-import tech.jinhaoma.AnkiMaker.domain.BingDataRepository;
 import tech.jinhaoma.AnkiMaker.search.BingSearchOnline;
 
 import java.lang.reflect.InvocationTargetException;

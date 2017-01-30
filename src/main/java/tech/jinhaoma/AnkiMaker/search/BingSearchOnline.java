@@ -15,13 +15,13 @@ import java.util.concurrent.Callable;
 /**
  * Created by mjrt on 1/23/2017.
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class BingSearchOnline implements Callable<BingData>{
+
+public class BingSearchOnline extends SearchOnline<BingData>{
     static final private String host = "http://cn.bing.com/dict/search?q=";
 
-    private String word;
+    public BingSearchOnline(String word) {
+        super(word);
+    }
 
     public static void main(String[] args) throws Exception {
         System.out.println(new BingSearchOnline("room").call());
@@ -30,6 +30,7 @@ public class BingSearchOnline implements Callable<BingData>{
     /*
     暂只处理中文意思与美语音标
      */
+    @Override
     public BingData Search(String word) throws IOException {
         Document doc = Jsoup.connect(host+word).get();
 
@@ -50,11 +51,7 @@ public class BingSearchOnline implements Callable<BingData>{
         bd.setApsUs(apsUs);
         bd.setMeanChinese(HtmlUtils.removeLineFeeds(meanChinese));
 
-        return bd;
+        return  bd;
     }
 
-    @Override
-    public BingData call() throws Exception {
-        return Search(word);
-    }
 }
