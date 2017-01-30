@@ -5,49 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2036fb86-dcdd-43f9-9057-9d2dba825339" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BaiduController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/FileController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/TestController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/WordCardController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/SearchOnline.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/BaiduService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/CrudService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/MerriamWebsterService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/VocabularyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/WordCardService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/impl/BaiduServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/impl/BingServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/impl/CurdServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/impl/MerriamWebsterServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/impl/VocabularyServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/impl/WordCardServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BaiduController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/BingController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/MerriamWebsterController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/VocabularyController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/WordCardController.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/AnkiMakerServiceApplication.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/AnkiMakerServiceApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/Swagger2.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/Swagger2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/TxtUtils.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/TxtUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduDataRepository.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BaiduDataRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BingDataRepository.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/BingDataRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/MerriamWebsterDataRepository.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/MerriamWebsterDataRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/VocabularyDataRepository.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/VocabularyDataRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/WordCard.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/WordCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/WordCardRepository.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/domain/WordCardRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCardMaker.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/maker/WordCardMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BaiduSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BingSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/BingSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/MerriamWebsterSearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/MerriamWebsterSearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/VocabularySearchOnline.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/VocabularySearchOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/BingService.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/BingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/AsyncTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/BingTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/MerriamWebsterTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BaiduController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BaiduController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BingController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/FileController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/FileController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/WordCardController.java" afterPath="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/WordCardController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,25 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="WordCardServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/impl/WordCardServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1411#1412#0" expanded="true" />
-                <element signature="e#1462#1463#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BaiduController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BaiduController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+            <state relative-caret-position="405">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,8 +66,8 @@
       <file leaf-file-name="VocabularyController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+            <state relative-caret-position="293">
+              <caret line="49" column="5" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -122,40 +76,66 @@
       <file leaf-file-name="BingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+            <state relative-caret-position="392">
+              <caret line="39" column="15" lean-forward="false" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WordCardController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WordCardController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/WordCardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="1124">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="e#660#661#0" expanded="true" />
                 <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
-                <element signature="e#1471#1472#0" expanded="true" />
-                <element signature="e#1507#1508#0" expanded="true" />
-                <element signature="e#1603#1604#0" expanded="true" />
-                <element signature="e#1643#1644#0" expanded="true" />
-                <element signature="e#1703#1704#0" expanded="true" />
-                <element signature="e#1730#1731#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#819#820#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Swagger2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/Swagger2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+            <state relative-caret-position="243">
+              <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MerriamWebsterController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,8 +143,8 @@
       <file leaf-file-name="FileController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="233">
+              <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,18 +155,8 @@
       <file leaf-file-name="TxtUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/TxtUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileInputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/code/java/jdk/src.zip!/java/io/FileInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1024">
-              <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+            <state relative-caret-position="179">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -263,8 +233,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/search/SearchTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/SpringUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/TestTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/test2.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/Task.java" />
@@ -307,12 +275,14 @@
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/rest/WordCardController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/TxtUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/WordCardController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BingController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BaiduController.java" />
         <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/FileController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BaiduController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BingController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/WordCardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/Swagger2.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
       </list>
     </option>
@@ -1196,7 +1166,7 @@
       <workItem from="1485653343672" duration="9098000" />
       <workItem from="1485685385844" duration="9000" />
       <workItem from="1485768852270" duration="1319000" />
-      <workItem from="1485770194765" duration="15161000" />
+      <workItem from="1485770194765" duration="17996000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1484571896585</created>
@@ -1296,11 +1266,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485522223675</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="adjust&#10;">
+      <created>1485786516724</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1485786516724</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257046000" />
+    <option name="totallyTimeSpent" value="259881000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1391,7 +1368,8 @@
     <MESSAGE value="generics and basic finished" />
     <MESSAGE value="service" />
     <MESSAGE value="instead of mongoDB&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="instead of mongoDB&#10;" />
+    <MESSAGE value="adjust&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1415,7 +1393,7 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1424,26 +1402,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/task/VocabularyTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#607#608#0" expanded="false" />
-            <element signature="e#639#640#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/service/TestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1801,80 +1759,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/common/TxtUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        <state relative-caret-position="179">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BaiduController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+        <state relative-caret-position="405">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/BingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        <state relative-caret-position="392">
+          <caret line="39" column="15" lean-forward="false" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="233">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/MerriamWebsterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/VocabularyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="49" column="5" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/controller/WordCardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="1124">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="e#660#661#0" expanded="true" />
             <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#1471#1472#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1730#1731#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/jinhaoma/AnkiMaker/Swagger2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

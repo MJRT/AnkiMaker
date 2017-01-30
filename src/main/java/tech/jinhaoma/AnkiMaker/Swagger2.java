@@ -28,7 +28,7 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("RESTful APIs")
-                .description("You cloud surfing http://blog.jinhaoma.tech/")
+                .description("You could surf http://blog.jinhaoma.tech/")
                 .termsOfServiceUrl("http://blog.jinhaoma.tech/")
                 .contact("MJRT")
                 .version("V1.0")

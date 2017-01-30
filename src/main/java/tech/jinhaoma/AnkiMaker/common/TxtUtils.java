@@ -24,9 +24,8 @@ public class TxtUtils {
         fis.close();
         return result;
     }
-
-    public static ArrayList<String> readTxt(File inFile,  String encode) throws IOException{
-        FileInputStream fis = new FileInputStream(inFile);
+    public static ArrayList<String> readTxt(String path,  String encode) throws IOException {
+        FileInputStream fis = new FileInputStream(path);
         InputStreamReader isr = new InputStreamReader(fis, encode);
         BufferedReader br = new BufferedReader(isr);
         String line = null;
@@ -38,10 +37,6 @@ public class TxtUtils {
         isr.close();
         fis.close();
         return result;
-    }
-    public static ArrayList<String> readTxt(String path,  String encode) throws IOException {
-        File inFile = new File(path);
-        return readTxt(inFile,encode);
     }
 
     public static boolean writeTxt(String path, List<String> reslut, String encode) throws IOException {

@@ -1,5 +1,6 @@
 package tech.jinhaoma.AnkiMaker.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,10 +17,9 @@ import java.util.List;
 @RequestMapping(value = "/file")
 public class FileController {
 
-    @PutMapping(value = "/upload")
-
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public String upload(@RequestParam("file")MultipartFile file){
-        System.out.println("OK");
         List<String> txt = null;
         if(!file.isEmpty()){
             try {

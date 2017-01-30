@@ -25,40 +25,35 @@ public class WordCardController {
         this.service = service;
     }
 
-    @GetMapping(value = "" )
+    @GetMapping
     public Page<WordCard> queryAll(Pageable pageable){
         return service.queryAll(pageable);
     }
-    @GetMapping(value = "/query/{word}" )
+
+    @GetMapping(value = "/{word}" )
     public Page<WordCard> query(@PathVariable  String word , Pageable pageable){
         return this.service.query(word,pageable);
     }
 
-    @PutMapping(value = "/upload")
+    @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void upload(@RequestBody List<WordCard> trucks) throws Exception {
         this.service.upload(trucks);
     }
 
-    @PostMapping(value = "/updata")
-    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
     public void updata(@RequestBody List<WordCard> trucks) throws Exception {
         this.service.updata(trucks);
-
     }
 
-    @DeleteMapping(value = "/purge")
+    @DeleteMapping
     public void purge() {
         this.service.purge();
     }
 
-    @DeleteMapping(value = "/purge/{word}")
+    @DeleteMapping(value = "/{word}")
     public void purge(@PathVariable String word) {
         this.service.purge(word);
     }
 
-    @GetMapping(value = "/test")
-    public String test(){
-        return "ok";
-    }
 }

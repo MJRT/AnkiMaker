@@ -23,35 +23,30 @@ public class MerriamWebsterController {
         this.service = service;
     }
 
-    @GetMapping(value = "/query/{word}")
+    @GetMapping(value = "/{word}")
     public MerriamWebsterData query(@PathVariable  String word){
         return this.service.query(word);
     }
 
-    @PostMapping(value = "/upload")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void upload(@RequestBody List<MerriamWebsterData> trucks) throws Exception {
         this.service.upload(trucks);
     }
 
-    @PutMapping(value = "/updata")
-    @ResponseStatus(HttpStatus.CREATED)
+    @PutMapping
     public void updata(@RequestBody List<MerriamWebsterData> trucks) throws Exception {
         this.service.updata(trucks);
     }
 
-    @DeleteMapping(value = "/purge")
+    @DeleteMapping
     public void purge() {
         this.service.purge();
     }
 
-    @DeleteMapping(value = "/purge/{word}")
+    @DeleteMapping(value = "/{word}")
     public void purge(@PathVariable String word) {
         this.service.purge(word);
     }
 
-    @GetMapping(value = "/test")
-    public String test(){
-        return "ok";
-    }
 }
