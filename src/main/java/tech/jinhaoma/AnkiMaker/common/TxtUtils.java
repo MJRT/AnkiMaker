@@ -55,7 +55,6 @@ public class TxtUtils {
         fos.close();
         return true;
     }
-
     public static boolean appedTxt(String path, String reslut, String encode) throws IOException {
         File out = new File(path);
         if (!out.exists())

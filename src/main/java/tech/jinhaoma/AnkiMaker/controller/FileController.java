@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import tech.jinhaoma.AnkiMaker.common.TxtUtils;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -28,11 +31,25 @@ public class FileController {
                 e.printStackTrace();
                 return "error" + e.toString();
             }
-            System.out.println(txt.toString());
+
             return "upload success!";
         } else {
             return "File is empty";
         }
 
+    }
+
+    @GetMapping
+    public void testDownload(HttpServletResponse res) throws IOException{
+        String fileName="card.txt";
+        res.setHeader("content-type", "application/octet-stream");
+        res.setContentType("application/octet-stream");
+        res.setHeader("Content-Disposition", "attachment;filename=card.txt");
+        File file=new File("E:\\temp\\spring-boot\\card.txt");
+
+        FileOutputStream fos=new FileOutputStream(file);
+
+        res.setContentLengthLong(file.length());
+        fos.close();
     }
 }

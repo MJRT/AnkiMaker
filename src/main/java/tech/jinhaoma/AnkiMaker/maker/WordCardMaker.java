@@ -1,10 +1,7 @@
 package tech.jinhaoma.AnkiMaker.maker;
 
 import tech.jinhaoma.AnkiMaker.common.TxtUtils;
-import tech.jinhaoma.AnkiMaker.domain.BingData;
-import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
-import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
-import tech.jinhaoma.AnkiMaker.domain.WordCard;
+import tech.jinhaoma.AnkiMaker.domain.*;
 import tech.jinhaoma.AnkiMaker.task.BingTask;
 import tech.jinhaoma.AnkiMaker.task.MerriamWebsterTask;
 import tech.jinhaoma.AnkiMaker.task.VocabularyTask;
@@ -41,32 +38,13 @@ public class WordCardMaker {
                                           merriamWebsterDatas.get(i)));
         }
 
-//        for(int i = 0 ; i < vocabularyDatas.size() ; i++){
-//            if(vocabularyDatas.get(i) == null){
-//                exception.add(words.get(i));
-//            } else {
-//                List<String> means = vocabularyDatas.get(i).getMean();
-//                for (int j = 0 ; j < means.size() ; j++){
-//                    WordCard card = new WordCard();
-//                    card.setWord(words.get(i));
-//                    card.setAps(bingDatas.get(i).getApsUs());
-//                    card.setMeanChinses(bingDatas.get(i).getMeanChinese());
-//                    card.setSplitWord(merriamWebsterDatas.get(i).getSplitWord());
-//                    card.setMeanEnglish(vocabularyDatas.get(i).getMean().get(j));
-//                    card.setSentence(vocabularyDatas.get(i).getSentence().get(j));
-//                    card.setExplain(vocabularyDatas.get(i).getShortExplain()+"<br>"+
-//                                    vocabularyDatas.get(i).getLongExplain());
-//                    cards.add(card);
-//                }
-//            }
-//        }
-
         List<String> result = new ArrayList<>();
         for(WordCard card :cards){
             result.add(card.toCard());
         }
 
-        TxtUtils.writeTxt("E:\\card.txt",exception,"UTF-8");
+        CardsTemp cardsTemp = new CardsTemp();
+//        TxtUtils.writeTxt("E:\\card.txt",exception,"UTF-8");
         System.out.println("made " + cards.size()+ " cards");
         return result;
     }
