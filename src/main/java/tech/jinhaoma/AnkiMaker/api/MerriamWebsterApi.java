@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.search;
+package tech.jinhaoma.AnkiMaker.api;
 
 
 
@@ -16,17 +16,17 @@ import java.io.IOException;
  */
 @Log4j2
 
-public class MerriamWebsterSearchOnline extends SearchOnline<MerriamWebsterData>{
+public class MerriamWebsterApi extends Api<MerriamWebsterData> {
 
     private static final String url = "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/";
     private static final String key = "?key=a19d0c7b-6815-4cec-93f2-2020afe15c24";
 
-    public MerriamWebsterSearchOnline(){super();}
-    public MerriamWebsterSearchOnline(String word) {super(word);}
+    public MerriamWebsterApi(){super();}
+    public MerriamWebsterApi(String word) {super(word);}
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new MerriamWebsterSearchOnline().Search("easily"));
+        System.out.println(new MerriamWebsterApi().Search("easily"));
     }
 
     /*

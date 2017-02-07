@@ -11,5 +11,6 @@ import java.util.List;
  */
 public interface BingService extends CrudService<BingData> {
     BingData query(String word);
+    List<BingData> batchQuery(List<String> words);
     void purge(String word);
 }

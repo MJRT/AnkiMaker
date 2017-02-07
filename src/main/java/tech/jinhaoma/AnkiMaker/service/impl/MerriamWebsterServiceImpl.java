@@ -28,7 +28,6 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
         MerriamWebsterData data = repository.findByWord(word);
 
         if (data != null){
-
             return data;
         }
 
@@ -52,11 +51,50 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
             e.printStackTrace();
         }
         repository.save(r);
+        System.out.println(word +":"+r.toString());
         data = r.get(0);
 
         if (data ==null)
             return null;
+        System.out.println("MerriamWebster OK");
         return data;
+    }
+
+    @Override
+    public List<MerriamWebsterData> batchQuery(List<String> words) {
+
+        List<String> Offline = new ArrayList<>();
+        List<MerriamWebsterData> r = new ArrayList<>();
+
+        for(String word : words){
+            MerriamWebsterData data = repository.findByWord(word);
+            if (data != null){
+                r.add(data);
+            } else {
+                Offline.add(word);
+            }
+        }
+        System.out.println(Offline.toString());
+        MerriamWebsterTask task = new MerriamWebsterTask();
+
+        try {
+            r.addAll(task.asyncMerriamWebsterTask(Offline));
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        repository.save(r);
+        System.out.println("MerriamWebster OK");
+        return r;
     }
 
     @Override

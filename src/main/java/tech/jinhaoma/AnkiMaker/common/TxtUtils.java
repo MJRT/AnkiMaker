@@ -55,6 +55,21 @@ public class TxtUtils {
         fos.close();
         return true;
     }
+    public static boolean writeTxt(String path, String reslut, String encode) throws IOException {
+        File out = new File(path);
+        if (!out.exists())
+            out.createNewFile();
+        FileOutputStream fos = new FileOutputStream(out);
+        OutputStreamWriter osw = new OutputStreamWriter(fos, encode);
+
+        osw.write(reslut);
+        osw.write("\r\n");
+
+        osw.flush();
+        osw.close();
+        fos.close();
+        return true;
+    }
     public static boolean appedTxt(String path, String reslut, String encode) throws IOException {
         File out = new File(path);
         if (!out.exists())

@@ -32,12 +32,12 @@ public class BaiduServiceImpl extends CurdServiceImpl<BaiduData,BaiduDataReposit
             return data;
         }
 
-        BaiduTask bingTask = new BaiduTask();
+        BaiduTask task = new BaiduTask();
         ArrayList<String> s = new ArrayList<>();
         s.add(word);
         List<BaiduData> r = null;
         try {
-            r = bingTask.asyncBaiduTask(s);
+            r = task.asyncBaiduTask(s);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -56,6 +56,7 @@ public class BaiduServiceImpl extends CurdServiceImpl<BaiduData,BaiduDataReposit
 
         if (data ==null)
             return null;
+        System.out.println("Baidu OK");
         return data;
     }
 

@@ -13,6 +13,7 @@ public interface WordCardService extends CrudService<WordCard>{
     List<WordCard> query(String word);
     Page<WordCard> query(String word,Pageable pageable);
     Page<WordCard> queryAll(Pageable pageable);
+    List<WordCard> batchQuery(List<String> words);
 
     void purge(String word );
 }

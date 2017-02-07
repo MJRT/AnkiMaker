@@ -1,14 +1,10 @@
-package tech.jinhaoma.AnkiMaker.search;
+package tech.jinhaoma.AnkiMaker.api;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-import org.springframework.beans.factory.annotation.Value;
 import tech.jinhaoma.AnkiMaker.domain.BaiduData;
 import tech.jinhaoma.AnkiMaker.common.HttpUtils;
 import tech.jinhaoma.AnkiMaker.common.MD5;
@@ -19,25 +15,24 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 /**
  * Created by mjrt on 1/17/2017.
  */
 
 @Log4j2
-public class BaiduSearchOnline extends SearchOnline<BaiduData> {
-    private static final String TRANS_API_HOST = "http://api.fanyi.baidu.com/api/trans/vip/translate";
+public class BaiduApi extends Api<BaiduData> {
+    private static final String TRANS_API_HOST = "http://api.fanyi.baidu.com/search/trans/vip/translate";
     private static final String APP_ID = "20160903000028063";
     private static final String SECURITY_KEY = "DOCPBODmVTKaLfuHIBoV";
 
-    public BaiduSearchOnline(String word) {
+    public BaiduApi(String word) {
         super(word);
     }
 
     public static void main(String[] args) throws Exception {
 
-        BaiduSearchOnline bso = new BaiduSearchOnline("eat");
+        BaiduApi bso = new BaiduApi("eat");
         BaiduData bd = bso.call();
         System.out.println(bd.toString());
     }

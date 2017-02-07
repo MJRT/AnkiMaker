@@ -3,7 +3,7 @@ package tech.jinhaoma.AnkiMaker.task;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import tech.jinhaoma.AnkiMaker.domain.BingData;
-import tech.jinhaoma.AnkiMaker.search.BingSearchOnline;
+import tech.jinhaoma.AnkiMaker.api.BingApi;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -15,14 +15,14 @@ import java.util.concurrent.ExecutionException;
  */
 @Log4j2
 @NoArgsConstructor
-public class BingTask extends AsyncTask<BingSearchOnline,BingData>{
+public class BingTask extends AsyncTask<BingApi,BingData>{
 
     public BingTask(int sleepTime) {
         super(sleepTime);
     }
 
     public List<BingData> asyncBingTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException {
-        List<BingData> bingDatas =  asyncTask(words,BingSearchOnline.class);
+        List<BingData> bingDatas =  asyncTask(words,BingApi.class);
         return  bingDatas;
     }
     public static void main(String[] args) throws ExecutionException, InterruptedException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {

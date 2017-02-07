@@ -33,12 +33,12 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
             return data;
         }
 
-        BingTask bingTask = new BingTask();
+        BingTask task = new BingTask();
         ArrayList<String> s = new ArrayList<>();
         s.add(word);
         List<BingData> r = null;
         try {
-            r = bingTask.asyncBingTask(s);
+            r = task.asyncBingTask(s);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -57,7 +57,53 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
 
         if (data ==null)
             return null;
+        System.out.println("Bing OK");
         return data;
+    }
+
+    @Override
+    public List<BingData> batchQuery(List<String> words) {
+
+        List<String> Offline = new ArrayList<>();
+        List<BingData> r = new ArrayList<>();
+
+        for(String word : words){
+            BingData data = repository.findByWord(word);
+            if (data != null){
+                r.add(data);
+            } else {
+                String tempWord = word.substring(0,1).toUpperCase()+word.substring(1,word.length());
+                data = repository.findByWord(word.substring(0,1).toUpperCase()+word.substring(1,word.length()));
+                if (data != null){
+                    r.add(data);
+                    word = tempWord;
+                } else {
+                    Offline.add(word);
+                }
+            }
+        }
+        System.out.println(Offline.toString());
+
+        BingTask task = new BingTask();
+
+        try {
+            r.addAll(task.asyncBingTask(Offline));
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        repository.save(r);
+        System.out.println("Bing OK");
+        return r;
     }
 
     @Override

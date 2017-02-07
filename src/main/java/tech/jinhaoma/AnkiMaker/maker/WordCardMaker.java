@@ -20,7 +20,7 @@ public class WordCardMaker {
     public List<String> getCard(List<String> words) throws ExecutionException, InterruptedException, IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         BingTask bingTask = new BingTask();
         VocabularyTask vocabularyTask = new VocabularyTask(300);
-        MerriamWebsterTask merriamWebsterTask = new MerriamWebsterTask(100);
+        MerriamWebsterTask merriamWebsterTask = new MerriamWebsterTask(300);
 
         List<BingData> bingDatas = bingTask.asyncBingTask(words);
         System.out.println("bing ok");
@@ -51,7 +51,7 @@ public class WordCardMaker {
 
     public static void main(String[] args) throws IOException, NoSuchMethodException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException {
 
-        String inFile = "E:\\Myfile\\ANKI卡包\\文本\\rankedWord.txt";
+        String inFile = "E:\\Myfile\\ANKI卡包\\文本\\target.txt";
         String outFile = "E:\\card.txt";
 
         List<String> words = TxtUtils.readTxt(inFile,"UTF-8");

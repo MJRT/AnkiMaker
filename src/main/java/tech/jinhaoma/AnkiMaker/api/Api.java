@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.search;
+package tech.jinhaoma.AnkiMaker.api;
 
 import lombok.*;
 
@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class SearchOnline<Data>  implements Callable<Data> {
+public abstract class Api<Data>  implements Callable<Data> {
 
     protected String word;
 

@@ -1,38 +1,42 @@
-package tech.jinhaoma.AnkiMaker.search;
+package tech.jinhaoma.AnkiMaker.api;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import tech.jinhaoma.AnkiMaker.common.TxtUtils;
 import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
 import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 /**
  * Created by mjrt on 1/17/2017.
  */
 @Log4j2
-public class VocabularySearchOnline extends SearchOnline<VocabularyData>{
+public class VocabularyApi extends Api<VocabularyData> {
 
     private final static String url = "https://www.vocabulary.com/dictionary/";
 
-    public VocabularySearchOnline(String word) {
+    public VocabularyApi(String word) {
         super(word);
     }
-    public VocabularySearchOnline() {
+    public VocabularyApi() {
         super();
     }
     public  VocabularyData Search(String word) throws IOException {
 
-        Document doc = Jsoup.connect(url+word).userAgent(HtmlUtils.userAgent).get();
-
+        Document doc = null;
+        try {
+            doc = Jsoup.connect(url+word).userAgent(HtmlUtils.userAgent).followRedirects(true).get();
+        } catch (IOException e) {
+            log.error(word +" ->-> "+e.toString());
+            e.printStackTrace();
+        }
+        TxtUtils.writeTxt("E:\\temp\\spring-boot\\test.html",doc.toString(),"UTF-8");
         Element originWord = doc.getElementsByClass("dynamictext").first();
         if(originWord == null){
             String t = word.substring(0,1).toUpperCase() + word.substring(1,word.length());
@@ -42,7 +46,7 @@ public class VocabularySearchOnline extends SearchOnline<VocabularyData>{
             VocabularyData result = Search(t);
 
             if(result == null){
-                log.error("\"" + word + "\" " + "does not exist.");
+                log.error("\"" + word + "\" " + "does not exist in Vocabulary Online.");
             } else {
                 word = t;
             }
@@ -110,7 +114,7 @@ public class VocabularySearchOnline extends SearchOnline<VocabularyData>{
         return Search(word);
     }
     public static void main(String[] args) throws IOException {
-        System.out.println(new VocabularySearchOnline().Search("mediterranean").toString());;
+        System.out.println(new VocabularyApi().Search("largest").toString());;
     }
 
 }

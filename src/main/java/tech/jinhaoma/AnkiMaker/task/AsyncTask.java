@@ -15,15 +15,19 @@ import java.util.concurrent.*;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-public class AsyncTask<Search,Data> {
+public class AsyncTask<Api,Data> {
 
-    protected int sleepTime;
+    protected long sleepTime;
 
-    public int getSleepTime() {
+    public long getSleepTime() {
         return sleepTime;
     }
 
-    public List<Data> asyncTask(List<String> words, Class<Search> searchClass) throws ExecutionException, InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public void setSleepTime(long sleepTime) {
+        this.sleepTime = sleepTime;
+    }
+
+    public List<Data> asyncTask(List<String> words, Class<Api> searchClass) throws ExecutionException, InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 
         ExecutorService executor = Executors.newCachedThreadPool();
         ArrayList<FutureTask<Data>> ft = new ArrayList<>();
@@ -36,6 +40,7 @@ public class AsyncTask<Search,Data> {
 
         for (int i = 0; i < words.size(); i++) {
             executor.submit(ft.get(i));
+            Thread.sleep(i);
         }
 
         ArrayList<Data> result = new ArrayList<>();
@@ -54,6 +59,10 @@ public class AsyncTask<Search,Data> {
         executor.shutdown();
 
         return result;
+    }
+
+    protected long fixSleepTime(int idx){
+        return sleepTime;
     }
 
 }

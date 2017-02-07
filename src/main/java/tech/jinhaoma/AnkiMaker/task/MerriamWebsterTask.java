@@ -2,9 +2,8 @@ package tech.jinhaoma.AnkiMaker.task;
 
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
-import tech.jinhaoma.AnkiMaker.search.MerriamWebsterSearchOnline;
+import tech.jinhaoma.AnkiMaker.api.MerriamWebsterApi;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -17,14 +16,14 @@ import java.util.concurrent.ExecutionException;
 @Log4j2
 
 @NoArgsConstructor
-public class MerriamWebsterTask extends AsyncTask<MerriamWebsterSearchOnline,MerriamWebsterData>{
+public class MerriamWebsterTask extends AsyncTask<MerriamWebsterApi,MerriamWebsterData>{
 
     public MerriamWebsterTask(int sleepTime) {
         super(sleepTime);
     }
 
     public List<MerriamWebsterData> asyncMerriamWebsterTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException {
-        return asyncTask(words,MerriamWebsterSearchOnline.class);
+        return asyncTask(words,MerriamWebsterApi.class);
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {

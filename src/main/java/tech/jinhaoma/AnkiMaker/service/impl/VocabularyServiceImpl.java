@@ -31,12 +31,12 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
             return data;
         }
 
-        VocabularyTask bingTask = new VocabularyTask();
+        VocabularyTask task = new VocabularyTask();
         ArrayList<String> s = new ArrayList<>();
         s.add(word);
         List<VocabularyData> r = null;
         try {
-            r = bingTask.asyncVocabularyTask(s);
+            r = task.asyncVocabularyTask(s);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -55,7 +55,45 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
 
         if (data ==null)
             return null;
+        System.out.println("Vocabulary OK");
         return data;
+    }
+
+    @Override
+    public List<VocabularyData> batchQuery(List<String> words) {
+
+        List<String> Offline = new ArrayList<>();
+        List<VocabularyData> r = new ArrayList<>();
+
+        for(String word : words){
+            VocabularyData data = repository.findByWord(word);
+            if (data != null){
+                r.add(data);
+            } else {
+                Offline.add(word);
+            }
+        }
+        System.out.println(Offline.toString());
+        VocabularyTask task = new VocabularyTask();
+
+        try {
+            r.addAll(task.asyncVocabularyTask(Offline));
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        repository.save(r);
+        System.out.println("Vocabulary OK");
+        return r;
     }
 
     @Override
