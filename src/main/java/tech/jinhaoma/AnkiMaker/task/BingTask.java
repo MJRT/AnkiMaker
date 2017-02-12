@@ -21,7 +21,7 @@ public class BingTask extends AsyncTask<BingApi,BingData>{
         super(sleepTime);
     }
 
-    public List<BingData> asyncBingTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException {
+    public List<BingData> asyncBingTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException {
         List<BingData> bingDatas =  asyncTask(words,BingApi.class);
         return  bingDatas;
     }

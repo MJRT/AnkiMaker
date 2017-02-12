@@ -22,7 +22,7 @@ public class WordCard {
 
     @Id
     @MongoGeneratedValue
-    private Long id;
+    private long id;
 
     private String word;
     private String splitWord;

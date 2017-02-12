@@ -17,7 +17,7 @@ public abstract class Api<Data>  implements Callable<Data> {
 
     protected String word;
 
-    public Data Search(String word) throws IOException {
+    public Data Search(String word) throws IOException, InterruptedException {
         return null;
     }
 

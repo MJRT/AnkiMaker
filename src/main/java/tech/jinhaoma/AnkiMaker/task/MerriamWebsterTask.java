@@ -2,6 +2,7 @@ package tech.jinhaoma.AnkiMaker.task;
 
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import tech.jinhaoma.AnkiMaker.common.RandomUtils;
 import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
 import tech.jinhaoma.AnkiMaker.api.MerriamWebsterApi;
 
@@ -37,5 +38,10 @@ public class MerriamWebsterTask extends AsyncTask<MerriamWebsterApi,MerriamWebst
         for(MerriamWebsterData w : r){
             System.out.println(w.toString());
         }
+    }
+
+    @Override
+    protected long fixSleepTime(int idx) {
+        return RandomUtils.nextInt(200,600);
     }
 }

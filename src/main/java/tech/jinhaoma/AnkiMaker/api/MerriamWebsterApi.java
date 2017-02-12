@@ -2,11 +2,15 @@ package tech.jinhaoma.AnkiMaker.api;
 
 
 
+import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.beans.factory.annotation.Autowired;
 import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
+import tech.jinhaoma.AnkiMaker.domain.WordMap;
+import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 
 import java.io.IOException;
 
@@ -15,7 +19,6 @@ import java.io.IOException;
  * Created by mjrt on 1/17/2017.
  */
 @Log4j2
-
 public class MerriamWebsterApi extends Api<MerriamWebsterData> {
 
     private static final String url = "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/";
@@ -24,7 +27,7 @@ public class MerriamWebsterApi extends Api<MerriamWebsterData> {
     public MerriamWebsterApi(){super();}
     public MerriamWebsterApi(String word) {super(word);}
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         System.out.println(new MerriamWebsterApi().Search("easily"));
     }
@@ -32,9 +35,19 @@ public class MerriamWebsterApi extends Api<MerriamWebsterData> {
     /*
     暂时只处理单词格式
      */
-    public MerriamWebsterData Search(String word) throws IOException {
+    public MerriamWebsterData Search(String word) throws InterruptedException {
 
-        Document doc = Jsoup.connect(url+word+key).ignoreContentType(true).get();
+        Document doc = null;
+        try {
+            doc = Jsoup.connect(url+word+key).ignoreContentType(true).get();
+        } catch (IOException e) {
+            Thread.sleep(600);
+            try {
+                doc = Jsoup.connect(url+word+key).ignoreContentType(true).get();
+            } catch (IOException e1) {
+                log.error(word +" ->->->->->-> "+e1.toString());
+            }
+        }
         Element originWord = doc.select("ew").first();
         Element splitWord = doc.select("hw").first();
 
@@ -52,13 +65,16 @@ public class MerriamWebsterApi extends Api<MerriamWebsterData> {
 
     private String ReplaceStarWithDash(String line){
         String[] s = line.split("[*]");
-        StringBuffer buffer = new StringBuffer();
-        for(String t : s){
-            buffer.append(t);
-            buffer.append("-");
+        if(s.length > 1){
+            StringBuffer buffer = new StringBuffer();
+            for(String t : s){
+                buffer.append(t);
+                buffer.append("-");
+            }
+            buffer.deleteCharAt(buffer.length()-1);
+            return buffer.toString();
         }
-        buffer.deleteCharAt(buffer.length()-1);
-        return buffer.toString();
+        return line;
     }
 
     @Override

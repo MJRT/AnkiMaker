@@ -1,11 +1,16 @@
 package tech.jinhaoma.AnkiMaker.api;
 
+import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
 import tech.jinhaoma.AnkiMaker.domain.BingData;
+import tech.jinhaoma.AnkiMaker.domain.WordMap;
+import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 
 import java.io.IOException;
 
@@ -17,6 +22,10 @@ import java.io.IOException;
 public class BingApi extends Api<BingData> {
     static final private String host = "http://cn.bing.com/dict/search?q=";
 
+    @Autowired
+    private WordMapRepository repository;
+
+    public BingApi(){super();}
     public BingApi(String word) {
         super(word);
     }
@@ -29,14 +38,26 @@ public class BingApi extends Api<BingData> {
     暂只处理中文意思与美语音标
      */
     @Override
-    public BingData Search(String word) throws IOException {
-        Document doc = Jsoup.connect(host+word).get();
+    public BingData Search(String word) throws InterruptedException {
+
+        Document doc = null;
+        try {
+            doc =Jsoup.connect(host+word).get();
+        } catch (IOException e) {
+            Thread.sleep(600);
+            try {
+                doc = Jsoup.connect(host+word).get();
+            } catch (IOException e1) {
+                log.error(word +" ->->->->->-> "+e1.toString());
+            }
+        }
 
         Element originWord = doc.getElementById("headword");
         if (originWord == null){
             log.error(word + " no search resulte");
             return null;
         }
+
 
         Element change = doc.getElementsByClass("pos web").first();
         if(change != null){

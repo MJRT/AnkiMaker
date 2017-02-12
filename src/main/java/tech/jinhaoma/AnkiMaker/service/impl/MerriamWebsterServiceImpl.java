@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
 import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterDataRepository;
+import tech.jinhaoma.AnkiMaker.domain.WordMap;
+import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 import tech.jinhaoma.AnkiMaker.service.MerriamWebsterService;
 import tech.jinhaoma.AnkiMaker.task.MerriamWebsterTask;
 
@@ -17,6 +19,9 @@ import java.util.concurrent.ExecutionException;
  */
 @Service
 public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterData,MerriamWebsterDataRepository> implements MerriamWebsterService {
+
+    @Autowired
+    private WordMapRepository wordMapRepository;
     @Autowired
     public MerriamWebsterServiceImpl(MerriamWebsterDataRepository repository) {
         super(repository);
@@ -25,6 +30,10 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
     @Override
     public MerriamWebsterData query(String word) {
 
+        WordMap map = wordMapRepository.findByKey(word);
+        if (map != null){
+            word = map.getValue();
+        }
         MerriamWebsterData data = repository.findByWord(word);
 
         if (data != null){
@@ -50,12 +59,18 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        repository.save(r);
-        System.out.println(word +":"+r.toString());
         data = r.get(0);
+        if(data != null){
+            repository.save(r);
+        } else {
+            data = new MerriamWebsterData();
+        }
 
-        if (data ==null)
-            return null;
+        if(map == null && !word.equals(data.getWord()) && data.getWord()!=null){
+            map = wordMapRepository.save(new WordMap(word,data.getWord()));
+            word = map.getValue();
+        }
+
         System.out.println("MerriamWebster OK");
         return data;
     }
@@ -64,21 +79,22 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
     public List<MerriamWebsterData> batchQuery(List<String> words) {
 
         List<String> Offline = new ArrayList<>();
-        List<MerriamWebsterData> r = new ArrayList<>();
+        List<MerriamWebsterData> res = new ArrayList<>();
+        List<MerriamWebsterData> tmp = null;
 
         for(String word : words){
             MerriamWebsterData data = repository.findByWord(word);
             if (data != null){
-                r.add(data);
+                res.add(data);
             } else {
                 Offline.add(word);
             }
         }
-        System.out.println(Offline.toString());
+        System.out.println("MerriamWebster Offline "+ "("+ Offline.size() +")"+Offline.toString());
         MerriamWebsterTask task = new MerriamWebsterTask();
 
         try {
-            r.addAll(task.asyncMerriamWebsterTask(Offline));
+            tmp = task.asyncMerriamWebsterTask(Offline);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -92,9 +108,24 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        repository.save(r);
+
+        if(tmp != null){
+            for(MerriamWebsterData data : tmp){
+                if(data != null){
+                    repository.save(data);
+                }
+                res.add(data);
+            }
+
+            for(int i = 0 ; i < Offline.size() ; i++){
+                WordMap map = wordMapRepository.findByKey(Offline.get(i));
+                if (map==null && tmp.get(i)!= null && !Offline.get(i).equals(tmp.get(i).getWord())){
+                    Offline.set(i,wordMapRepository.save(new WordMap(Offline.get(i),tmp.get(i).getWord())).getValue());
+                }
+            }
+        }
         System.out.println("MerriamWebster OK");
-        return r;
+        return res;
     }
 
     @Override

@@ -5,9 +5,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import tech.jinhaoma.AnkiMaker.common.TxtUtils;
 import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
 import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
+import tech.jinhaoma.AnkiMaker.domain.WordMap;
+import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,22 +24,27 @@ public class VocabularyApi extends Api<VocabularyData> {
 
     private final static String url = "https://www.vocabulary.com/dictionary/";
 
-    public VocabularyApi(String word) {
-        super(word);
-    }
     public VocabularyApi() {
         super();
     }
-    public  VocabularyData Search(String word) throws IOException {
+    public VocabularyApi(String word) {
+        super(word);
+    }
+
+    public  VocabularyData Search(String word) throws  InterruptedException {
 
         Document doc = null;
         try {
-            doc = Jsoup.connect(url+word).userAgent(HtmlUtils.userAgent).followRedirects(true).get();
+            doc = Jsoup.connect(url+word).userAgent(HtmlUtils.userAgent).get();
         } catch (IOException e) {
-            log.error(word +" ->-> "+e.toString());
-            e.printStackTrace();
+            Thread.sleep(600);
+            try {
+                doc = Jsoup.connect(url+word).userAgent(HtmlUtils.userAgent).get();
+            } catch (IOException e1) {
+                log.error(word +" ->->->->->-> "+e.toString());
+            }
         }
-        TxtUtils.writeTxt("E:\\temp\\spring-boot\\test.html",doc.toString(),"UTF-8");
+//        TxtUtils.writeTxt("E:\\temp\\spring-boot\\test.html",doc.toString(),"UTF-8");
         Element originWord = doc.getElementsByClass("dynamictext").first();
         if(originWord == null){
             String t = word.substring(0,1).toUpperCase() + word.substring(1,word.length());
@@ -53,7 +61,6 @@ public class VocabularyApi extends Api<VocabularyData> {
 
             return result;
         }
-
 
         Element shortExplain = doc.getElementsByClass("short").first();
         Element longExplain = doc.getElementsByClass("long").first();
@@ -113,8 +120,8 @@ public class VocabularyApi extends Api<VocabularyData> {
     public VocabularyData call() throws Exception {
         return Search(word);
     }
-    public static void main(String[] args) throws IOException {
-        System.out.println(new VocabularyApi().Search("largest").toString());;
+    public static void main(String[] args) throws IOException, InterruptedException {
+        System.out.println(new VocabularyApi().Search("largest").toString());
     }
 
 }

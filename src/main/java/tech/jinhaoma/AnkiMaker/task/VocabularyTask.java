@@ -6,6 +6,7 @@ package tech.jinhaoma.AnkiMaker.task;
 
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import tech.jinhaoma.AnkiMaker.common.RandomUtils;
 import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
 import tech.jinhaoma.AnkiMaker.api.VocabularyApi;
 
@@ -21,7 +22,6 @@ public class VocabularyTask extends AsyncTask<VocabularyApi,VocabularyData>{
     public VocabularyTask(int sleepTime) {
         super(sleepTime);
     }
-
 
     public List<VocabularyData> asyncVocabularyTask(List<String> words) throws NoSuchMethodException, InterruptedException, ExecutionException, IllegalAccessException, InstantiationException, InvocationTargetException, InvocationTargetException, InvocationTargetException {
         return asyncTask(words,VocabularyApi.class);
@@ -42,6 +42,6 @@ public class VocabularyTask extends AsyncTask<VocabularyApi,VocabularyData>{
 
     @Override
     protected long fixSleepTime(int idx) {
-        return (idx & 127) * 100;
+        return RandomUtils.nextInt(300,500);
     }
 }

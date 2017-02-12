@@ -5,9 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.log4j.Log4j2;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import tech.jinhaoma.AnkiMaker.domain.BaiduData;
 import tech.jinhaoma.AnkiMaker.common.HttpUtils;
 import tech.jinhaoma.AnkiMaker.common.MD5;
+import tech.jinhaoma.AnkiMaker.domain.WordMap;
+import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 
 
 import java.io.IOException;
@@ -22,9 +25,10 @@ import java.util.Map;
 
 @Log4j2
 public class BaiduApi extends Api<BaiduData> {
-    private static final String TRANS_API_HOST = "http://api.fanyi.baidu.com/search/trans/vip/translate";
+    private static final String TRANS_API_HOST = "http://api.fanyi.baidu.com/api/trans/vip/translate";
     private static final String APP_ID = "20160903000028063";
     private static final String SECURITY_KEY = "DOCPBODmVTKaLfuHIBoV";
+
 
     public BaiduApi(String word) {
         super(word);
@@ -38,6 +42,8 @@ public class BaiduApi extends Api<BaiduData> {
     }
 
     public  BaiduData Search(String word) throws IOException {
+
+
         String json = getTransResult(word, "auto", "zh");
         ObjectMapper mapper = new ObjectMapper();
         BaiduData bd = mapper.readValue(json,BaiduData.class);

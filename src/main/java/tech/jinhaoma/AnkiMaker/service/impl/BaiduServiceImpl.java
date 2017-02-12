@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.jinhaoma.AnkiMaker.domain.BaiduData;
 import tech.jinhaoma.AnkiMaker.domain.BaiduDataRepository;
+import tech.jinhaoma.AnkiMaker.domain.WordMap;
+import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 import tech.jinhaoma.AnkiMaker.service.BaiduService;
 import tech.jinhaoma.AnkiMaker.task.BaiduTask;
 
@@ -23,8 +25,11 @@ public class BaiduServiceImpl extends CurdServiceImpl<BaiduData,BaiduDataReposit
         super(repository);
     }
 
+
+
     @Override
     public BaiduData query(String word) {
+
 
         BaiduData data = repository.findByWord(word);
 

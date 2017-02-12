@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
 import tech.jinhaoma.AnkiMaker.domain.VocabularyDataRepository;
+import tech.jinhaoma.AnkiMaker.domain.WordMap;
+import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 import tech.jinhaoma.AnkiMaker.service.VocabularyService;
 import tech.jinhaoma.AnkiMaker.task.VocabularyTask;
 
@@ -17,6 +19,9 @@ import java.util.concurrent.ExecutionException;
  */
 @Service
 public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,VocabularyDataRepository> implements VocabularyService{
+
+    @Autowired
+    private WordMapRepository wordMapRepository;
     @Autowired
     public VocabularyServiceImpl(VocabularyDataRepository repository) {
         super(repository);
@@ -25,6 +30,10 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
     @Override
     public VocabularyData query(String word) {
 
+        WordMap map = wordMapRepository.findByKey(word);
+        if (map != null){
+            word = map.getValue();
+        }
         VocabularyData data = repository.findByWord(word);
 
         if (data != null){
@@ -50,11 +59,18 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        repository.save(r);
         data = r.get(0);
+        if(data != null){
+            repository.save(r);
+        } else {
+            data = new VocabularyData();
+        }
 
-        if (data ==null)
-            return null;
+        if(map == null && !word.equals(data.getWord())&& data.getWord()!=null){
+            map = wordMapRepository.save(new WordMap(word,data.getWord()));
+            word = map.getValue();
+        }
+
         System.out.println("Vocabulary OK");
         return data;
     }
@@ -63,21 +79,26 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
     public List<VocabularyData> batchQuery(List<String> words) {
 
         List<String> Offline = new ArrayList<>();
-        List<VocabularyData> r = new ArrayList<>();
+        List<VocabularyData> res = new ArrayList<>();
+        List<VocabularyData> tmp = null;
 
         for(String word : words){
+            WordMap map = wordMapRepository.findByKey(word);
+            if(map != null){
+                word = map.getValue();
+            }
             VocabularyData data = repository.findByWord(word);
             if (data != null){
-                r.add(data);
+                res.add(data);
             } else {
                 Offline.add(word);
             }
         }
-        System.out.println(Offline.toString());
+        System.out.println("Vocabulary Offline "+ "("+ Offline.size() +")"+ Offline.toString());
         VocabularyTask task = new VocabularyTask();
 
         try {
-            r.addAll(task.asyncVocabularyTask(Offline));
+            tmp = task.asyncVocabularyTask(Offline);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -91,9 +112,25 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        repository.save(r);
+
+
+        if(tmp != null){
+            for(VocabularyData data : tmp){
+                if(data != null){
+                    repository.save(data);
+                }
+                res.add(data);
+            }
+            for(int i = 0 ; i < Offline.size() ; i++){
+                WordMap map = wordMapRepository.findByKey(Offline.get(i));
+                if (map==null && tmp.get(i)!= null && !Offline.get(i).equals(tmp.get(i).getWord()) ){
+                    wordMapRepository.save(new WordMap(Offline.get(i),tmp.get(i).getWord()));
+                    Offline.set(i,tmp.get(i).getWord());
+                }
+            }
+        }
         System.out.println("Vocabulary OK");
-        return r;
+        return res;
     }
 
     @Override
