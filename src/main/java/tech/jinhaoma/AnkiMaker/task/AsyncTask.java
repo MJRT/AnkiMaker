@@ -40,7 +40,7 @@ public class AsyncTask<Api,Data> {
 
         for (int i = 0; i < words.size(); i++) {
             executor.submit(ft.get(i));
-            Thread.sleep(i);
+            Thread.sleep(fixSleepTime(i));
         }
 
         ArrayList<Data> result = new ArrayList<>();
