@@ -1,10 +1,5 @@
-package tech.jinhaoma.AnkiMaker.common;
+package tech.jinhaoma.AnkiMaker.utils;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 
 import java.io.*;

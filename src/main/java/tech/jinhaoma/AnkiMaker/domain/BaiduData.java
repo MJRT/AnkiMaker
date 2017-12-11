@@ -3,11 +3,11 @@ package tech.jinhaoma.AnkiMaker.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
+import org.springframework.data.mongodb.core.mapping.Field;
+import tech.jinhaoma.AnkiMaker.utils.MongoGeneratedValue;
 
-
-import javax.persistence.*;
 
 import java.util.List;
 
@@ -23,13 +23,12 @@ public class BaiduData {
     @MongoGeneratedValue
     private long id;
 
-    @Column(name = "fromLanguage")
+    @Field(value = "fromLanguage")
     private String from;
-    @Column(name = "toLanguage")
+    @Field(value = "toLanguage")
     private String to;
 
     private String word;
-    @Column(length = 4095)
     private String mean;
 
     private List<BaiduResult> trans_result;

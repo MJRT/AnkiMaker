@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.common;
+package tech.jinhaoma.AnkiMaker.utils;
 
 /**
  * Created by mjrt on 1/19/2017.

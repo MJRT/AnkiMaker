@@ -81,12 +81,18 @@ public class WordCardServiceImpl extends CurdServiceImpl<WordCard,WordCardReposi
             }
         }
 
-        List<BingData> bingDatas = bingService.batchQuery(Offline);
-        List<VocabularyData> vocabularyDatas = vocabularyService.batchQuery(Offline);
-        List<MerriamWebsterData> merriamWebsterDatas = merriamWebsterService.batchQuery(Offline);
+        bingService.batchQuery(Offline);
+        vocabularyService.batchQuery(Offline);
+        merriamWebsterService.batchQuery(Offline);
 
         for(int i = 0 ; i < Offline.size() ; i++){
-            cards.addAll(WordCard.install(bingDatas.get(i),vocabularyDatas.get(i),merriamWebsterDatas.get(i)));
+            try{
+                cards.addAll(WordCard.install(bingService.query(Offline.get(i)),
+                        vocabularyService.query(Offline.get(i)),
+                        merriamWebsterService.query(Offline.get(i))));
+            } catch (NullPointerException e){
+                System.out.println(e.toString() + "->:" + Offline.get(i));
+            }
         }
 
         repository.save(cards);

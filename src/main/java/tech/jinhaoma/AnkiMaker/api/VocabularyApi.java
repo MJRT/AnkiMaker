@@ -5,12 +5,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.beans.factory.annotation.Autowired;
-import tech.jinhaoma.AnkiMaker.common.TxtUtils;
 import tech.jinhaoma.AnkiMaker.domain.VocabularyData;
-import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
-import tech.jinhaoma.AnkiMaker.domain.WordMap;
-import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
+import tech.jinhaoma.AnkiMaker.utils.HtmlUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;

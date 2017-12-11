@@ -5,26 +5,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 import tech.jinhaoma.AnkiMaker.utils.MongoGeneratedValue;
 
 /**
- * Created by mjrt on 1/27/2017.
+ * Created by mjrt on 5/28/2017.
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "sequence")
-public class SequenceId {
+@Document(collection = "EasyWord")
+public class EasyWord {
 
     @Id
     @MongoGeneratedValue
-    private String id;
+    Long id;
+    String word;
 
-    @Field("seq_id")
-    private long seqId;
-
-    @Field("coll_name")
-    private String collName;
-
+    public EasyWord(String word) {
+        this.word = word;
+    }
 }

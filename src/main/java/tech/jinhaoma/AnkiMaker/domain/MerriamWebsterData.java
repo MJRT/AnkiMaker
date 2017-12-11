@@ -4,11 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
-
-import javax.persistence.Id;
-
+import tech.jinhaoma.AnkiMaker.utils.MongoGeneratedValue;
 
 /**
  * Created by mjrt on 1/18/2017.

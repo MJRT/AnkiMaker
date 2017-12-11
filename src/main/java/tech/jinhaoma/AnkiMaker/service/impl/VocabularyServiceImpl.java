@@ -71,7 +71,7 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
             word = map.getValue();
         }
 
-        System.out.println("Vocabulary OK");
+//        System.out.println("Vocabulary OK");
         return data;
     }
 
@@ -129,7 +129,7 @@ public class VocabularyServiceImpl extends CurdServiceImpl<VocabularyData,Vocabu
                 }
             }
         }
-        System.out.println("Vocabulary OK");
+//        System.out.println("Vocabulary OK");
         return res;
     }
 

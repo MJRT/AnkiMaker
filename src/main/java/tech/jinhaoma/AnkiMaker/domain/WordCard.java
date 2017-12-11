@@ -3,9 +3,9 @@ package tech.jinhaoma.AnkiMaker.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
-
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import tech.jinhaoma.AnkiMaker.utils.MongoGeneratedValue;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 //@Entity
-//@Table(name = "WordCard")
+@Document(collection =  "WordCard")
 public class WordCard {
 
     @Id
@@ -64,19 +64,17 @@ public class WordCard {
         if(vocabularyData != null){
             word = vocabularyData.getWord();
             explain = vocabularyData.getShortExplain()+"<br>"+vocabularyData.getLongExplain();
-            List<String> means = vocabularyData.getMean();
-            for (int j = 0 ; j < means.size() ; j++){
-                WordCard card = new WordCard();
-                card.setWord(word);
-                card.setAps(aps==null?"":aps);
-                card.setMeanChinses(meanChinses==null?"":meanChinses);
-                card.setSplitWord(splitWord==null?"":splitWord);
-                card.setMeanEnglish(vocabularyData.getMean().get(j));
-                card.setSentence(vocabularyData.getSentence().get(j));
-                card.setExplain(explain);
-                card.setNote(note);
-                list.add(card);
-            }
+
+            WordCard card = new WordCard();
+            card.setWord(word);
+            card.setAps(aps==null?"":aps);
+            card.setMeanChinses(meanChinses==null?"":meanChinses);
+            card.setSplitWord(splitWord==null?"":splitWord);
+            card.setMeanEnglish(vocabularyData.getMean().get(0).split("\n")[0]);
+            card.setSentence(vocabularyData.getSentence().get(0).split("\n")[0]);
+            card.setExplain(explain);
+            card.setNote(note);
+            list.add(card);
             return list;
         } else {
             WordCard card = new WordCard();

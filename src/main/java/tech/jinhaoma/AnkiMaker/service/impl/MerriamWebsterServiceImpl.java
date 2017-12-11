@@ -71,7 +71,7 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
             word = map.getValue();
         }
 
-        System.out.println("MerriamWebster OK");
+        //System.out.println("MerriamWebster OK");
         return data;
     }
 
@@ -124,7 +124,7 @@ public class MerriamWebsterServiceImpl extends CurdServiceImpl<MerriamWebsterDat
                 }
             }
         }
-        System.out.println("MerriamWebster OK");
+        //System.out.println("MerriamWebster OK");
         return res;
     }
 

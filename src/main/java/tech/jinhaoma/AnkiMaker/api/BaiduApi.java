@@ -5,12 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.log4j.Log4j2;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import tech.jinhaoma.AnkiMaker.domain.BaiduData;
-import tech.jinhaoma.AnkiMaker.common.HttpUtils;
-import tech.jinhaoma.AnkiMaker.common.MD5;
-import tech.jinhaoma.AnkiMaker.domain.WordMap;
-import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
+import tech.jinhaoma.AnkiMaker.utils.HttpUtils;
+import tech.jinhaoma.AnkiMaker.utils.MD5;
 
 
 import java.io.IOException;

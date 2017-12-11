@@ -1,10 +1,10 @@
 package tech.jinhaoma.AnkiMaker.domain;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import tech.jinhaoma.AnkiMaker.common.MongoGeneratedValue;
+import tech.jinhaoma.AnkiMaker.utils.MongoGeneratedValue;
 
-import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -23,9 +23,7 @@ public class VocabularyData {
     @MongoGeneratedValue
     private long id;
     private String word;
-    @Column(length = 4095)
     private String shortExplain ;
-    @Column(length = 4095)
     private String longExplain ;
     private List<String> mean;
     private List<String> sentence;

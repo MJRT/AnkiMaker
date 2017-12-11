@@ -2,7 +2,7 @@ package tech.jinhaoma.AnkiMaker.task;
 
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import tech.jinhaoma.AnkiMaker.common.RandomUtils;
+import tech.jinhaoma.AnkiMaker.utils.RandomUtils;
 import tech.jinhaoma.AnkiMaker.domain.MerriamWebsterData;
 import tech.jinhaoma.AnkiMaker.api.MerriamWebsterApi;
 

@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.common;
+package tech.jinhaoma.AnkiMaker.utils;
 
 import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;

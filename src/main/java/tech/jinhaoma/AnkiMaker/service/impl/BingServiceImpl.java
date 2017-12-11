@@ -1,6 +1,7 @@
 package tech.jinhaoma.AnkiMaker.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.jinhaoma.AnkiMaker.api.BingApi;
 import tech.jinhaoma.AnkiMaker.domain.BingData;
@@ -24,6 +25,7 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
 
     @Autowired
     WordMapRepository wordMapRepository;
+
 
     @Autowired
     public BingServiceImpl(BingDataRepository repository) {
@@ -61,7 +63,6 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
             word = map.getValue();
         }
 
-        System.out.println("Bing OK");
         return data;
     }
 
@@ -73,6 +74,7 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
         List<BingData> tmp = null;
 
         for(String word : words){
+
             WordMap map = wordMapRepository.findByKey(word);
             if(map != null){
                 word = map.getValue();
@@ -82,8 +84,12 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
             if (data != null){
                 res.add(data);
             } else {
-
-                String tempWord = word.substring(0,1).toUpperCase()+word.substring(1,word.length());
+                String tempWord = "";
+                try{
+                    tempWord = word.substring(0,1).toUpperCase()+word.substring(1,word.length());
+                } catch (StringIndexOutOfBoundsException e){
+                    System.out.println("word = " + word);
+                }
 
                 data = repository.findByWord(word.substring(0,1).toUpperCase()+word.substring(1,word.length()));
                 if (data != null){
@@ -127,7 +133,7 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
                 }
             }
         }
-        System.out.println("Bing OK");
+//        System.out.println("Bing OK");
         return res;
     }
 

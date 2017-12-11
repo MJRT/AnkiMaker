@@ -1,6 +1,6 @@
 package tech.jinhaoma.AnkiMaker.maker;
 
-import tech.jinhaoma.AnkiMaker.common.TxtUtils;
+import tech.jinhaoma.AnkiMaker.utils.TxtUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,11 +29,11 @@ public class Contrastor {
     }
 
     public static void main(String[] args) throws IOException {
-        List<String> words = TxtUtils.readTxt("E:\\Myfile\\ANKI卡包\\文本\\words_list_in [35,INF] 2017-02-01_18h54m59s.txt","UTF-8");
+        List<String> words = TxtUtils.readTxt("E:\\Myfile\\ANKI卡包\\文本\\words_list_in [35,INF] 2017-05-21_21h26m15s.txt","UTF-8");
         List<String> easy = TxtUtils.readTxt("E:\\Myfile\\ANKI卡包\\文本\\easy.txt","UTF-8");
 
         List<String> res = Contrastor.dealwith(words,easy);
-        TxtUtils.writeTxt("E:\\Myfile\\ANKI卡包\\文本\\target.txt",res,"UTF-8");
+        TxtUtils.writeTxt("E:\\Myfile\\ANKI卡包\\文本\\ect4.txt",res,"UTF-8");
     }
 
 

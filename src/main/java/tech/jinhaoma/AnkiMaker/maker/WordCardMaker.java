@@ -1,6 +1,6 @@
 package tech.jinhaoma.AnkiMaker.maker;
 
-import tech.jinhaoma.AnkiMaker.common.TxtUtils;
+import tech.jinhaoma.AnkiMaker.utils.TxtUtils;
 import tech.jinhaoma.AnkiMaker.domain.*;
 import tech.jinhaoma.AnkiMaker.task.BingTask;
 import tech.jinhaoma.AnkiMaker.task.MerriamWebsterTask;

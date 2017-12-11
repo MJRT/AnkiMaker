@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.common;
+package tech.jinhaoma.AnkiMaker.utils;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package tech.jinhaoma.AnkiMaker.common;
+package tech.jinhaoma.AnkiMaker.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +17,8 @@ public class TxtUtils {
         String line = null;
         ArrayList<String> result = new ArrayList<>();
         while ((line = br.readLine()) != null) {
-            result.add(line);
+            if(!line.equals(""))
+                result.add(line);
         }
         br.close();
         isr.close();

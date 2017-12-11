@@ -1,15 +1,12 @@
 package tech.jinhaoma.AnkiMaker.api;
 
-import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import tech.jinhaoma.AnkiMaker.common.HtmlUtils;
+import tech.jinhaoma.AnkiMaker.utils.HtmlUtils;
 import tech.jinhaoma.AnkiMaker.domain.BingData;
-import tech.jinhaoma.AnkiMaker.domain.WordMap;
 import tech.jinhaoma.AnkiMaker.domain.WordMapRepository;
 
 import java.io.IOException;
