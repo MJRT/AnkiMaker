@@ -1,6 +1,9 @@
 package tech.jinhaoma.AnkiMaker.utils;
 
+import lombok.extern.log4j.Log4j2;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -11,16 +14,44 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.Date;
 import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-
+@Log4j2
 public class HttpUtils {
     protected static final int SOCKET_TIMEOUT = 10000; // 10S
     protected static final String GET = "GET";
+
+    public static Document JsoupGet(String host, Integer retryTime) throws InterruptedException {
+        int retry = 0;
+        Document dom = null;
+
+        retryLabel :
+        try {
+            dom = Jsoup.connect(host)
+                    .userAgent(HttpUtils.getRandomUserAgent())
+                    .validateTLSCertificates(false)
+                    .get();
+        } catch (IOException e) {
+
+            Thread.sleep(retryTime<<retry);
+            if(retry++ < 3)  break retryLabel ;
+        }
+
+        if(dom == null){
+            log.error(host+" DOM is null in "+DateUtils.getFormatBySecond(new Date()));
+        }
+        return dom;
+    }
+
+
+    public static String getRandomUserAgent() {
+        return Constants.userAgents[RandomUtils.nextInt(0, Constants.userAgents.length-1)];
+    }
 
     public static String get(String host, Map<String, String> params) {
         try {
