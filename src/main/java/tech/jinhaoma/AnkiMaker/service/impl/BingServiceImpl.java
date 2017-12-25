@@ -102,7 +102,7 @@ public class BingServiceImpl extends CurdServiceImpl<BingData,BingDataRepository
         }
         System.out.println("Bing Offline "+ "("+ Offline.size() +")"+Offline.toString());
 
-        BingTask task = new BingTask();
+        BingTask task = new BingTask(1000);
 
         try {
             tmp = task.asyncBingTask(Offline);

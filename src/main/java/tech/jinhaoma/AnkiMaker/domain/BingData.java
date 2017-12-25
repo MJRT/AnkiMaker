@@ -1,6 +1,7 @@
 package tech.jinhaoma.AnkiMaker.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -16,6 +17,7 @@ import tech.jinhaoma.AnkiMaker.utils.MongoGeneratedValue;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "BingData")
+@Builder
 public class BingData {
 
     @Id
